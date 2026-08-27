@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: auto; /* Lenis takes over smooth scrolling */
+  max-width: 100%;
+  overflow-x: clip;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @apply bg-maroon-deep text-ivory font-body;
+  overflow-x: clip;
+  overflow-y: auto;
+  max-width: 100%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+::selection {
+  @apply bg-gold text-maroon-deep;
+}
+
+h1, h2, h3, .font-display {
+  font-family: theme('fontFamily.display');
+}
+
+/* Respect reduced motion globally */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible focus states for accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible,
+textarea:focus-visible, select:focus-visible {
+  outline: 2px solid theme('colors.gold.bright');
+  outline-offset: 3px;
+}
+
+.text-shadow-royal {
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Lenis */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
