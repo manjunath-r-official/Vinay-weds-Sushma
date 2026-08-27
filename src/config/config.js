@@ -38,6 +38,10 @@ const config = {
     by: 'Sushma & Vinay',
   },
 
+  welcome: {
+    flowerEmojis: ['🌼', '🌸'],
+  },
+
   // ------------------------------------------------------------- DATES
   weddingDate: '2026-09-21T09:00:00',
   receptionDate: '2026-09-20T19:00:00',
