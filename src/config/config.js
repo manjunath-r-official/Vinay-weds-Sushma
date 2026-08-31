@@ -72,7 +72,7 @@ const config = {
 
   // ------------------------------------------------------------- MUSIC
   // Path to an mp3 in src/assets/audio/. Leave empty string to disable.
-  backgroundMusic: '/src/assets/audio/bgm.mp3',
+  backgroundMusic: '/src/assets/audio/bgm1.mp3',
   soundEffects: {
     templeBells: '/src/assets/audio/temple-bells.mp3',
     doorOpen: '/src/assets/audio/door-open.mp3',
