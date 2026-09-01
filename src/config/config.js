@@ -93,6 +93,13 @@ const config = {
       rose: '#E3B7A0',
       ink: '#241008',
     },
+    // Per-event readable text colors (override defaults for specific events)
+    colorsByEvent: {
+      Haldi: { heading: '#26080D', sub: '#241008' }, // dark maroon on yellow/white
+      Mehendi: { heading: '#0F5C4A', sub: '#241008' }, // deep green on green/white
+      Wedding: { heading: '#3B0D14', sub: '#241008' }, // maroon on cream
+      Reception: { heading: '#241008', sub: '#8a6b4a' }, // dark ink on white/cream
+    },
     fonts: {
       display: '"Cormorant Garamond", serif',
       cinzel: '"Cinzel", serif',
@@ -117,9 +124,9 @@ const config = {
       date: 'Dec 10, 2026',
       time: '10:00 AM',
       venue: 'Family Residence, Delhi',
-      dressCode: 'Yellow Attire',
+      // dressCode: 'Yellow Attire',
       description: 'A joyful morning of turmeric, laughter, and blessings from both families.',
-      backgroundImage: '/src/assets/images/1.jpg', // optional per-card override, e.g. '/src/assets/images/haldi-bg.jpg'
+      backgroundImage: '/src/assets/images/events/haldi.png', // optional per-card override, e.g. '/src/assets/images/haldi-bg.jpg'
     },
     {
       name: 'Mehendi',
@@ -127,19 +134,29 @@ const config = {
       date: 'Dec 10, 2026',
       time: '4:00 PM',
       venue: 'Garden Courtyard',
-      dressCode: 'Green & Gold',
+      // dressCode: 'Green & Gold',
       description: 'Intricate henna, live dhol, and an evening of stories and sweets.',
-      backgroundImage: '/src/assets/images/2.jpg',
+      backgroundImage: '/src/assets/images/events/mehandi.png',
     },
+    // {
+    //   name: 'Sangeet',
+    //   icon: '🎶',
+    //   date: 'Dec 11, 2026',
+    //   time: '7:00 PM',
+    //   venue: 'The Leela Palace Lawns',
+    //   dressCode: 'Festive Indo-Western',
+    //   description: "A night of dance battles between both families — bring your best moves.",
+    //   backgroundImage: '/src/assets/images/3.jpg',
+    // },
     {
-      name: 'Sangeet',
-      icon: '🎶',
-      date: 'Dec 11, 2026',
+      name: 'Reception',
+      icon: '🥂',
+      date: 'Dec 13, 2026',
       time: '7:00 PM',
-      venue: 'The Leela Palace Lawns',
-      dressCode: 'Festive Indo-Western',
-      description: "A night of dance battles between both families — bring your best moves.",
-      backgroundImage: '/src/assets/images/3.jpg',
+      venue: 'Crystal Ballroom, The Leela Palace',
+      // dressCode: 'Formal / Black Tie',
+      description: 'An elegant evening to celebrate the newlyweds with dinner and dance.',
+      backgroundImage: '/src/assets/images/events/reception.png',
     },
     {
       name: 'Wedding',
@@ -147,20 +164,10 @@ const config = {
       date: 'Dec 12, 2026',
       time: '9:00 AM',
       venue: 'Main Mandap, The Leela Palace',
-      dressCode: 'Traditional Indian',
+      // dressCode: 'Traditional Indian',
       description: 'Sacred vows exchanged around the holy fire, as our families become one.',
-      backgroundImage: '/src/assets/images/4.jpg',
-    },
-    {
-      name: 'Reception',
-      icon: '🥂',
-      date: 'Dec 13, 2026',
-      time: '7:00 PM',
-      venue: 'Crystal Ballroom, The Leela Palace',
-      dressCode: 'Formal / Black Tie',
-      description: 'An elegant evening to celebrate the newlyweds with dinner and dance.',
-      backgroundImage: '/src/assets/images/5.jpg',
-    },
+      backgroundImage: '/src/assets/images/events/wedding.png',
+    }
   ],
 
   // ---------------------------------------------------------- TIMELINE
