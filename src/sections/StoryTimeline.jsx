@@ -21,13 +21,15 @@ export default function StoryTimeline() {
       });
     }
 
-    // wait for exit animation before unmounting and advancing
-    const exitMs = 360;
+    // Advance the next step immediately so its animation starts while modal exits
+    setCurrentAnimateIndex((ci) => (ci < config.saptapadi.length - 1 ? ci + 1 : ci));
+    setActiveIndex(null);
+
+    // wait for exit animation before unmounting
+    const exitMs = 1100;
     setTimeout(() => {
       setModalClosing(false);
       setActiveStep(null);
-      setActiveIndex(null);
-      setCurrentAnimateIndex((ci) => (ci < config.saptapadi.length - 1 ? ci + 1 : ci));
     }, exitMs);
   };
 
@@ -77,7 +79,7 @@ export default function StoryTimeline() {
                   setActiveIndex(index);
                 }}
                 aria-disabled={!(isActive || allViewed)}
-                className={`group relative block w-full bg-transparent p-0 text-left transition-transform duration-300 ${
+                className={`group relative block w-full bg-transparent p-0 text-left transition-transform duration-400 ${
                   isActive || allViewed ? 'cursor-pointer' : 'pointer-events-none opacity-90'
                 }`}
                 style={{ marginTop: index === 0 ? '0' : '-8px', zIndex: 10 - index }}
@@ -153,8 +155,8 @@ export default function StoryTimeline() {
           0% { opacity: 1; transform: translateY(0) scale(1); }
           100% { opacity: 0; transform: translateY(8px) scale(0.99); }
         }
-        .modal-enter { animation: modalIn 360ms cubic-bezier(.2,.9,.2,1) both; }
-        .modal-exit { animation: modalOut 320ms cubic-bezier(.2,.9,.2,1) both; }
+        .modal-enter { animation: modalIn 900ms cubic-bezier(.2,.9,.2,1) both; }
+        .modal-exit { animation: modalOut 900ms cubic-bezier(.2,.9,.2,1) both; }
         @keyframes overlayIn {
           0% { opacity: 0; }
           100% { opacity: 1; }
@@ -163,19 +165,19 @@ export default function StoryTimeline() {
           0% { opacity: 1; }
           100% { opacity: 0; }
         }
-        .overlay-enter { animation: overlayIn 220ms ease both; }
-        .overlay-exit { animation: overlayOut 200ms ease both; }
+        .overlay-enter { animation: overlayIn 700ms ease both; }
+        .overlay-exit { animation: overlayOut 700ms ease both; }
 
         @keyframes contentIn {
-          0% { opacity: 0; transform: translateY(10px) scale(0.995); }
+          0% { opacity: 0; transform: translateY(30vh) scale(0.995); }
           100% { opacity: 1; transform: translateY(0) scale(1); }
         }
         @keyframes contentOut {
           0% { opacity: 1; transform: translateY(0) scale(1); }
-          100% { opacity: 0; transform: translateY(10px) scale(0.995); }
+          100% { opacity: 0; transform: translateY(30vh) scale(0.995); }
         }
-        .modal-content-enter { animation: contentIn 360ms cubic-bezier(.2,.9,.2,1) both; }
-        .modal-content-exit { animation: contentOut 320ms cubic-bezier(.2,.9,.2,1) both; }
+        .modal-content-enter { animation: contentIn 1100ms cubic-bezier(.22,.9,.25,1) both; }
+        .modal-content-exit { animation: contentOut 1100ms cubic-bezier(.22,.9,.25,1) both; }
       `}</style>
     </section>
   );

@@ -46,45 +46,62 @@ export default function Events() {
             return (
               <Reveal key={ev.name} variant={contentOnLeft ? 'slideLeft' : 'slideRight'} delay={i * 0.05}>
                 <motion.div
-                  className="grid grid-cols-1 md:grid-cols-2 rounded-[20px] overflow-hidden border"
-                  style={{ borderColor: 'rgba(201,162,75,.28)' }}
-                  whileHover={{ y: -6 }}
-                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                  className="grid grid-cols-1 md:grid-cols-2 rounded-2xl overflow-hidden border transform-gpu"
+                  style={{
+                    borderColor: 'rgba(255,255,255,0.06)',
+                    borderWidth: '1px',
+                    background: 'rgba(255,255,255,0.02)',
+                    boxShadow: '0 12px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02)',
+                    backdropFilter: 'blur(8px)',
+                    WebkitBackdropFilter: 'blur(8px)',
+                    perspective: 1400,
+                  }}
+                  whileHover={{ rotateX: 3, rotateY: -6, scale: 1.02 }}
+                  transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
                 >
-                  {/* Content block */}
+                  {/* Content block (glass card) */}
                   <div
-                    className={`p-8 md:p-10 flex flex-col justify-center ${contentOnLeft ? 'md:order-1' : 'md:order-2'}`}
-                    style={{ background: 'linear-gradient(160deg, rgba(201,162,75,.1), rgba(201,162,75,.02))' }}
+                    className={`p-6 md:p-10 flex flex-col justify-center ${contentOnLeft ? 'md:order-1' : 'md:order-2'}`}
+                    style={{
+                      background: 'linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01))',
+                      borderRight: contentOnLeft ? '1px solid rgba(255,255,255,0.02)' : 'none',
+                    }}
                   >
-                    <div className="text-3xl mb-3">{ev.icon}</div>
-                    <h4 className="font-display text-3xl text-gold-bright mb-1.5">{ev.name}</h4>
-                    <div className="text-rose text-xs mb-4 tracking-wide">{ev.date} · {ev.time}</div>
-                    <p className="text-[#e9dcc7] text-[15px] leading-relaxed mb-3">{ev.description}</p>
-                    <p className="text-[#e9dcc7] text-sm mb-1">{ev.venue}</p>
-                    <div className="text-gold text-xs uppercase tracking-wider mt-2">{ev.dressCode}</div>
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-gradient-to-br from-gold/20 to-transparent text-2xl text-gold-bright shadow-md transform-gpu">
+                        {ev.icon}
+                      </div>
+                      <div>
+                        <h4 className="font-display text-2xl md:text-3xl text-ivory leading-tight">{ev.name}</h4>
+                        <div className="text-rose text-xs tracking-wide mt-1">{ev.date} · {ev.time}</div>
+                      </div>
+                    </div>
+
+                    <p className="text-[#e9dcc7] text-[15px] leading-relaxed mb-4">{ev.description}</p>
+
+                    <div className="mt-auto flex items-center justify-start gap-4">
+                      <div>
+                        <p className="text-[#e9dcc7] text-sm mb-1">{ev.venue}</p>
+                        <div className="text-gold text-xs uppercase tracking-wider">{ev.dressCode}</div>
+                      </div>
+                    </div>
                   </div>
 
-                  {/* Accent / photo block — shows the optional backgroundImage if set,
-                      otherwise a themed gradient with the event icon large & soft */}
+                  {/* Accent / photo block — modern image with overlay */}
                   <div
-                    className={`relative min-h-[200px] md:min-h-0 flex items-center justify-center ${contentOnLeft ? 'md:order-2' : 'md:order-1'}`}
-                    style={
-                      ev.backgroundImage
-                        ? {
-                            backgroundImage: `url(${ev.backgroundImage})`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                          }
-                        : {
-                            background:
-                              'radial-gradient(circle at 50% 50%, rgba(201,162,75,.18), rgba(38,8,13,.4))',
-                          }
-                    }
+                    className={`relative min-h-[220px] md:min-h-0 flex items-center justify-center overflow-hidden ${contentOnLeft ? 'md:order-2' : 'md:order-1'}`}
                   >
-                    {!ev.backgroundImage && (
-                      <span className="text-[90px] opacity-25 select-none" aria-hidden="true">
-                        {ev.icon}
-                      </span>
+                    {ev.backgroundImage ? (
+                      <>
+                        <img src={ev.backgroundImage} alt={ev.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-1200 ease-in-out" style={{ transformOrigin: 'center' }} />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-black/8" />
+                        <div className="absolute -inset-2 bg-white/3 blur-2xl transform-gpu opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                      </>
+                    ) : (
+                      <div className="relative w-full h-full flex items-center justify-center" aria-hidden="true">
+                        <div className="rounded-full w-[220px] h-[220px] bg-gradient-to-tr from-[#c9a24b]/12 to-transparent blur-[40px]" />
+                        <span className="text-[88px] opacity-20 select-none z-10">{ev.icon}</span>
+                      </div>
                     )}
                   </div>
                 </motion.div>
