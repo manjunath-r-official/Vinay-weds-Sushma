@@ -206,6 +206,61 @@ const config = {
     // { src: '/src/assets/videos/highlight.mp4', type: 'video', poster: '/src/assets/images/gallery-1.jpg' },
   ],
 
+  // ------------------------------------------------------- SAPTAPADI IMAGES
+  // Configure step images here. Each step can define `image` (thumbnail)
+  // and `modalImage` (larger backdrop shown in the modal).
+  saptapadi: [
+    {
+      number: '01',
+      title: 'Pratham Padi',
+      meaning: 'We walk together with faith, trust, and a shared purpose.',
+      image: '/src/assets/images/saptapadi/1.png',
+      modalImage: '/src/assets/images/saptapadi/modal-1.jpg',
+    },
+    {
+      number: '02',
+      title: 'Dvitiiya Padi',
+      meaning: 'We nurture strength, harmony, and a life of togetherness.',
+      image: '/src/assets/images/saptapadi/2.png',
+      modalImage: '/src/assets/images/saptapadi/modal-2.jpg',
+    },
+    {
+      number: '03',
+      title: 'Tritiya Padi',
+      meaning: 'We honour prosperity, wisdom, and the blessings of family.',
+      image: '/src/assets/images/saptapadi/3.png',
+      modalImage: '/src/assets/images/saptapadi/modal-3.jpg',
+    },
+    {
+      number: '04',
+      title: 'Chaturthi Padi',
+      meaning: 'We grow in love, comfort, and mutual respect every day.',
+      image: '/src/assets/images/saptapadi/4.png',
+      modalImage: '/src/assets/images/saptapadi/modal-4.jpg',
+    },
+    {
+      number: '05',
+      title: 'Panchami Padi',
+      meaning: 'We cherish courage, compassion, and a life rooted in grace.',
+      image: '/src/assets/images/saptapadi/5.png',
+      modalImage: '/src/assets/images/saptapadi/modal-5.jpg',
+    },
+    {
+      number: '06',
+      title: 'Shashthi Padi',
+      meaning: 'We walk in devotion, loyalty, and the light of union.',
+      image: '/src/assets/images/saptapadi/6.png',
+      modalImage: '/src/assets/images/saptapadi/modal-6.jpg',
+    },
+    {
+      number: '07',
+      title: 'Saptami Padi',
+      meaning: 'We vow to remain one in joy, sorrow, and forever.',
+      image: '/src/assets/images/saptapadi/7.png',
+      modalImage: '/src/assets/images/saptapadi/modal-7.jpg',
+    },
+  ],
+
   // ------------------------------------------------------------ FAMILY
   family: [
     { name: 'Dr. Suresh Raghunathan', relation: 'Father of the Bride', photo: '/src/assets/images/family-1.jpg' },
