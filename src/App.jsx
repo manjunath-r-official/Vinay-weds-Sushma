@@ -71,7 +71,7 @@ export default function App() {
           <Couple />
           <StoryTimeline />
           <Events />
-          <Countdown />
+          {/* <Countdown /> */}
           <Gallery />
           {/* <PhotoCarousel /> */}
           <Family />
