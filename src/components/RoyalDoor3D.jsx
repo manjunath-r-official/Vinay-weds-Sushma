@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { gsap } from 'gsap';
-const doorLeft = '/images/door/door-left.jpg';
-const doorRight = '/images/door/door-right.jpg';
+import doorLeft from '../assets/images/door/door-left.jpg';
+import doorRight from '../assets/images/door/door-right.jpg';
 
 /**
  * Full-bleed royal palace door built from the couple's own reference

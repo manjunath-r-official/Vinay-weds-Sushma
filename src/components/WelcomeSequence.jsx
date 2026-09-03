@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import config from '../config/config.js';
-const ganeshaImage = '/images/lordganesha.png';
-const thoranaImage = '/images/GIF/thorana.gif';
+import ganeshaImage from '../assets/images/lordganesha.png';
+import thoranaImage from '../assets/images/GIF/thorana.gif';
 
 const MARIGOLD_COLORS = ['#f8d266', '#f4a261', '#f9b233', '#e76f51', '#f1c40f'];
 

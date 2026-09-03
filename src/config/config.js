@@ -5,11 +5,28 @@
 // Image paths should point to files you add in src/assets/images/.
 // ============================================================================
 
-// Assets are served from `public/` under `/images` and `/audio`.
-// Move your files from `src/assets/...` into `public/images/...` and
-// `public/audio/...` and they will be served as `/images/...` and
-// `/audio/...` in production (Vercel/Netlify). Update filenames here
-// if you rename or reorganize folders in `public/`.
+// Import assets so Vite includes them in the production build. Keep images
+// inside `src/assets/...` and update these imports when swapping photos.
+import img1 from '../assets/images/1.jpg';
+import img2 from '../assets/images/2.jpg';
+import img3 from '../assets/images/3.jpg';
+import img4 from '../assets/images/4.jpg';
+import img5 from '../assets/images/5.jpg';
+import img6 from '../assets/images/6.jpg';
+import haldiImg from '../assets/images/events/haldi.png';
+import mehandiImg from '../assets/images/events/mehandi.png';
+import receptionImg from '../assets/images/events/reception.png';
+import weddingImg from '../assets/images/events/wedding.png';
+import sapt1 from '../assets/images/saptapadi/1.png';
+import sapt2 from '../assets/images/saptapadi/2.png';
+import sapt3 from '../assets/images/saptapadi/3.png';
+import sapt4 from '../assets/images/saptapadi/4.png';
+import sapt5 from '../assets/images/saptapadi/5.png';
+import sapt6 from '../assets/images/saptapadi/6.png';
+import sapt7 from '../assets/images/saptapadi/7.png';
+import peacockPlaceholder from '../assets/images/peacock-placeholder.svg';
+// Background music (replace with your file in src/assets/audio/)
+import bgm from '../assets/audio/bgm.mp3';
 
 const config = {
   // ---------------------------------------------------------------- SEO
@@ -25,7 +42,7 @@ const config = {
     name: 'Sushma',
     fullName: 'Sushma Raghunathan',
     parents: 'Dr. Suresh & Mrs. Kavitha Raghunathan',
-    photo: '/images/3.jpg',
+    photo: img3,
     story:
       'A classical dancer with a weakness for filter coffee and old Ilaiyaraaja songs. Sushma believes every celebration deserves marigolds.',
   },
@@ -33,11 +50,11 @@ const config = {
     name: 'Vinay',
     fullName: 'Vinay Srinivasan',
     parents: 'Mr. Ramesh & Mrs. Lakshmi Srinivasan',
-    photo: '/images/2.jpg',
+    photo: img2,
     story:
       'An engineer who once wrote Sushma a love letter in Python comments. Vinay is happiest with a camera, a cricket bat, or both.',
   },
-  heroPhoto: '/images/1.jpg',
+  heroPhoto: img1,
 
   quote: {
     text: 'Two souls, one heart, one destiny woven in gold thread and temple bells.',
@@ -78,7 +95,7 @@ const config = {
 
   // ------------------------------------------------------------- MUSIC
   // Path to an mp3 in src/assets/audio/. Leave empty string to disable.
-  backgroundMusic: '/audio/bgm.mp3',
+  backgroundMusic: bgm,
   soundEffects: {
     templeBells: '',
     doorOpen: '',
@@ -132,7 +149,7 @@ const config = {
       venue: 'Family Residence, Delhi',
       // dressCode: 'Yellow Attire',
       description: 'A joyful morning of turmeric, laughter, and blessings from both families.',
-      backgroundImage: '/images/events/haldi.png', // optional per-card override
+      backgroundImage: haldiImg, // optional per-card override
     },
     {
       name: 'Mehendi',
@@ -142,7 +159,7 @@ const config = {
       venue: 'Garden Courtyard',
       // dressCode: 'Green & Gold',
       description: 'Intricate henna, live dhol, and an evening of stories and sweets.',
-      backgroundImage: '/images/events/mehandi.png',
+      backgroundImage: mehandiImg,
     },
     // {
     //   name: 'Sangeet',
@@ -162,7 +179,7 @@ const config = {
       venue: 'Crystal Ballroom, The Leela Palace',
       // dressCode: 'Formal / Black Tie',
       description: 'An elegant evening to celebrate the newlyweds with dinner and dance.',
-      backgroundImage: '/images/events/reception.png',
+      backgroundImage: receptionImg,
     },
     {
       name: 'Wedding',
@@ -172,7 +189,7 @@ const config = {
       venue: 'Main Mandap, The Leela Palace',
       // dressCode: 'Traditional Indian',
       description: 'Sacred vows exchanged around the holy fire, as our families become one.',
-      backgroundImage: '/images/events/wedding.png',
+      backgroundImage: weddingImg,
     }
   ],
 
@@ -182,40 +199,40 @@ const config = {
       year: '2019',
       title: 'A Chance Meeting',
       text: 'They met at a college photography club, arguing over the correct exposure for a sunset.',
-      image: '/images/1.jpg',
+      image: img1,
       video: '',
     },
     {
       year: '2021',
       title: 'First Trip Together',
       text: 'A rainy weekend in Munnar sealed what the photography club started.',
-      image: '/images/2.jpg',
+      image: img2,
       video: '',
     },
     {
       year: '2023',
       title: 'He Asked The Big Question',
       text: 'On a rooftop lit with fairy lights, with both families secretly watching from below.',
-      image: '/images/3.jpg',
+      image: img3,
       video: '',
     },
     {
       year: '2026',
       title: 'Forever Begins',
       text: 'Two families, one wedding, and a lifetime of filter coffee ahead.',
-      image: '/images/4.jpg',
+      image: img4,
       video: '',
     },
   ],
 
   // ----------------------------------------------------------- GALLERY
   gallery: [
-    { src: '/images/1.jpg', type: 'image' },
-    { src: '/images/2.jpg', type: 'image' },
-    { src: '/images/3.jpg', type: 'image' },
-    { src: '/images/4.jpg', type: 'image' },
-    { src: '/images/5.jpg', type: 'image' },
-    { src: '/images/6.jpg', type: 'image' },
+    { src: img1, type: 'image' },
+    { src: img2, type: 'image' },
+    { src: img3, type: 'image' },
+    { src: img4, type: 'image' },
+    { src: img5, type: 'image' },
+    { src: img6, type: 'image' },
     // { src: '/videos/highlight.mp4', type: 'video', poster: '/images/gallery-1.jpg' },
   ],
 
@@ -227,59 +244,59 @@ const config = {
       number: '01',
       title: 'Pratham Padi',
       meaning: 'We walk together with faith, trust, and a shared purpose.',
-      image: '/images/saptapadi/1.png',
-      modalImage: '/images/saptapadi/modal-1.jpg',
+      image: sapt1,
+      modalImage: sapt1,
     },
     {
       number: '02',
       title: 'Dvitiiya Padi',
       meaning: 'We nurture strength, harmony, and a life of togetherness.',
-      image: '/images/saptapadi/2.png',
-      modalImage: '/images/saptapadi/modal-2.jpg',
+      image: sapt2,
+      modalImage: sapt2,
     },
     {
       number: '03',
       title: 'Tritiya Padi',
       meaning: 'We honour prosperity, wisdom, and the blessings of family.',
-      image: '/images/saptapadi/3.png',
-      modalImage: '/images/saptapadi/modal-3.jpg',
+      image: sapt3,
+      modalImage: sapt3,
     },
     {
       number: '04',
       title: 'Chaturthi Padi',
       meaning: 'We grow in love, comfort, and mutual respect every day.',
-      image: '/images/saptapadi/4.png',
-      modalImage: '/images/saptapadi/modal-4.jpg',
+      image: sapt4,
+      modalImage: sapt4,
     },
     {
       number: '05',
       title: 'Panchami Padi',
       meaning: 'We cherish courage, compassion, and a life rooted in grace.',
-      image: '/images/saptapadi/5.png',
-      modalImage: '/images/saptapadi/modal-5.jpg',
+      image: sapt5,
+      modalImage: sapt5,
     },
     {
       number: '06',
       title: 'Shashthi Padi',
       meaning: 'We walk in devotion, loyalty, and the light of union.',
-      image: '/images/saptapadi/6.png',
-      modalImage: '/images/saptapadi/modal-6.jpg',
+      image: sapt6,
+      modalImage: sapt6,
     },
     {
       number: '07',
       title: 'Saptami Padi',
       meaning: 'We vow to remain one in joy, sorrow, and forever.',
-      image: '/images/saptapadi/7.png',
-      modalImage: '/images/saptapadi/modal-7.jpg',
+      image: sapt7,
+      modalImage: sapt7,
     },
   ],
 
   // ------------------------------------------------------------ FAMILY
   family: [
-    { name: 'Dr. Suresh Raghunathan', relation: 'Father of the Bride', photo: '/images/family-1.jpg' },
-    { name: 'Kavitha Raghunathan', relation: 'Mother of the Bride', photo: '/images/family-2.jpg' },
-    { name: 'Ramesh Srinivasan', relation: 'Father of the Groom', photo: '/images/family-3.jpg' },
-    { name: 'Lakshmi Srinivasan', relation: 'Mother of the Groom', photo: '/images/family-4.jpg' },
+    { name: 'Dr. Suresh Raghunathan', relation: 'Father of the Bride', photo: '' },
+    { name: 'Kavitha Raghunathan', relation: 'Mother of the Bride', photo: '' },
+    { name: 'Ramesh Srinivasan', relation: 'Father of the Groom', photo: '' },
+    { name: 'Lakshmi Srinivasan', relation: 'Mother of the Groom', photo: '' },
   ],
 
   // --------------------------------------------------- SCRATCH SURPRISE
@@ -336,7 +353,7 @@ const config = {
   // whenever you have one ready — until then a placeholder is used.
   navigation: {
     style: 'feather-drawer', // 'feather-drawer' | 'bar' (classic always-visible bar)
-    peacockIcon: '/images/peacock-placeholder.svg',
+    peacockIcon: peacockPlaceholder,
   },
 
   // ------------------------------------------------------------ ANIMATION

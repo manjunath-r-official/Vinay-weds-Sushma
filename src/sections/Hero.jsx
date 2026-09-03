@@ -1,4 +1,6 @@
 import config from '../config/config.js';
+import heroSmall from '../assets/images/hero_small.png';
+import heroBig from '../assets/images/hero_big.png';
 
 export default function Hero() {
   const groom = config.groom?.name || 'Groom';
@@ -15,14 +17,14 @@ export default function Hero() {
           align-items: flex-start;
           justify-content: center;
           padding-top: 15vh; /* place title ~20% from top */
-          background-image: url('/images/hero_small.png');
+          background-image: url('${heroSmall}');
           background-size: cover;
           background-position: center center;
           background-repeat: no-repeat;
         }
 
         @media (min-width: 768px) {
-          .hero-bg { background-image: url('/images/hero_big.png'); }
+          .hero-bg { background-image: url('${heroBig}'); }
         }
 
         .hero-overlay {
