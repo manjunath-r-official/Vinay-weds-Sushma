@@ -63,7 +63,10 @@ export default function Events() {
                   transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
                 >
                   {/* backdrop overlay to ensure readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-black/12" aria-hidden="true" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-black/12 z-0" aria-hidden="true" />
+
+                  {/* moving glow behind the content (above bg image, below content) */}
+                  <div className="absolute inset-0 pointer-events-none card-glow" aria-hidden="true" />
 
                   {/* Content block sits above the backdrop */}
                   <div
@@ -76,16 +79,13 @@ export default function Events() {
                       borderRadius: '12px'
                     }}
                   >
-                    <div className="flex items-center gap-4 mb-4 justify-between">
-                      <div className="flex items-center gap-4">
-                        <div className="h-3 w-8 rounded-full bg-gradient-to-r from-gold/70 to-gold/30 shadow-sm" aria-hidden="true" />
-                        <div>
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className={`w-full ${contentOnLeft ? '' : 'text-right'}`}>
                           <h4 className="font-display text-2xl md:text-3xl leading-tight" style={{ color: (config.theme.colorsByEvent && config.theme.colorsByEvent[ev.name]?.heading) || config.theme.colors.maroon }}>
                             {ev.name}
                           </h4>
                           <div className="text-xs tracking-wide mt-1" style={{ color: (config.theme.colorsByEvent && config.theme.colorsByEvent[ev.name]?.sub) || config.theme.colors.rose }}>{ev.date} · {ev.time}</div>
                         </div>
-                      </div>
                     </div>
 
                     <p className="text-[15px] leading-relaxed mb-4" style={{ color: config.theme.colors.ivory }}>{ev.description}</p>
@@ -101,18 +101,68 @@ export default function Events() {
           })}
         </div>
         <style>{`
-          /* Desktop-only (leave mobile untouched) */
-          @media (min-width: 1024px) {
-            .event-card { transition: transform 0.6s cubic-bezier(.2,.8,.2,1), box-shadow 0.6s; }
-            .event-card:hover { transform: rotateX(4deg) rotateY(-8deg) scale(1.03); box-shadow: 0 28px 70px rgba(2,6,23,0.75); }
+          /* Keep left/right alignment consistent on all sizes */
+          .event-content-panel.content-left { text-align: left; }
+          .event-content-panel.content-right { text-align: right; }
 
-            .event-content-panel { max-width: 55% !important; padding: 2.25rem !important; border-radius: 16px !important; }
-            .event-content-panel.content-left { margin-left: 0 !important; margin-right: auto !important; text-align: left; }
-            .event-content-panel.content-right { margin-right: 0 !important; margin-left: auto !important; text-align: right; }
-
-            /* Slight stronger parallax on background for large screens */
-            .event-card[style] { background-size: cover; }
+          /* animated glowing blobs behind each card */
+          .card-glow {
+            z-index: 8; /* above overlay (z-0) but below content (z-10) */
+            filter: blur(28px);
+            opacity: 1;
+            mix-blend-mode: screen;
+            background-image: radial-gradient(700px 350px at 15% 35%, rgba(201,162,75,0.32), transparent 28%),
+                              radial-gradient(500px 260px at 85% 65%, rgba(226,200,96,0.22), transparent 36%);
+            transform: translate3d(0,0,0) scale(1.02);
+            animation: glowMove 14s ease-in-out infinite;
+            transition: opacity 0.6s ease, transform 0.6s ease;
           }
+
+          @keyframes glowMove {
+            0% { transform: translateX(-6%) translateY(0) rotate(0deg); }
+            25% { transform: translateX(6%) translateY(-3%) rotate(8deg); }
+            50% { transform: translateX(-4%) translateY(3%) rotate(0deg); }
+            75% { transform: translateX(4%) translateY(-2%) rotate(-6deg); }
+            100% { transform: translateX(-6%) translateY(0) rotate(0deg); }
+          }
+
+            /* Desktop-only (leave mobile layout spacing untouched) */
+            @media (min-width: 1024px) {
+              .event-card { transition: transform 0.6s cubic-bezier(.2,.8,.2,1), box-shadow 0.6s; }
+              .event-card:hover { transform: rotateX(4deg) rotateY(-8deg) scale(1.03); box-shadow: 0 28px 70px rgba(2,6,23,0.75); }
+
+                /* 3D layered edge effect */
+                .event-card::before,
+                .event-card::after {
+                  content: '';
+                  position: absolute;
+                  inset: 10px;
+                  border-radius: 18px;
+                  z-index: 0;
+                  transition: transform 0.6s cubic-bezier(.2,.8,.2,1), opacity 0.6s;
+                  pointer-events: none;
+                }
+                .event-card::before {
+                  background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.02));
+                  transform: translate3d(12px, 14px, 0) scale(0.995);
+                  opacity: 0.9;
+                }
+                .event-card::after {
+                  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+                  transform: translate3d(6px, 8px, 0) scale(0.997);
+                  opacity: 0.7;
+                }
+
+                .event-card:hover::before { transform: translate3d(6px, 8px, 0) scale(0.998); opacity: 0.7; }
+                .event-card:hover::after { transform: translate3d(3px, 4px, 0) scale(0.999); opacity: 0.85; }
+
+              .event-content-panel { max-width: 55% !important; padding: 2.25rem !important; border-radius: 16px !important; }
+              .event-content-panel.content-left { margin-left: 0 !important; margin-right: auto !important; }
+              .event-content-panel.content-right { margin-right: 0 !important; margin-left: auto !important; }
+
+              /* Slight stronger parallax on background for large screens */
+              .event-card[style] { background-size: cover; }
+            }
         `}</style>
       </div>
     </section>
