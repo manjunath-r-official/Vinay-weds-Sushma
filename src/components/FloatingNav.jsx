@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import config from '../config/config.js';
-import featherIcon from '../assets/images/feather-icon.png';
+const featherIcon = '/images/feather-icon.png';
 
 const LINKS = [
   { href: '#hero', label: 'Home' },
