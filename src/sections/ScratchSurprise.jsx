@@ -36,8 +36,9 @@ export default function ScratchSurprise({ onCelebrate }) {
       canvas.height = wrapper.clientHeight;
 
       const gBright = config.theme.colors.goldBright || '#E8C874';
-      const gDark = config.theme.colors.gold || '#f4c35a';
-      // Base diagonal gold gradient with multiple stops for a richer wrap
+      const gDark = config.theme.colors.gold || '#C9A24B';
+
+      // Base diagonal gold gradient across the canvas (aligned correctly)
       const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
       grad.addColorStop(0, gBright);
       grad.addColorStop(0.18, '#fff8e6');
@@ -48,33 +49,33 @@ export default function ScratchSurprise({ onCelebrate }) {
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Add a glossy diagonal sheen (narrow band) across the wrapper
-      ctx.save();
-      // rotate slightly to create a diagonal highlight
-      const angle = -0.75; // radians
-      ctx.translate(canvas.width / 2, canvas.height / 2);
-      ctx.rotate(angle);
-      ctx.translate(-canvas.width / 2, -canvas.height / 2);
-
-      const sheenTop = canvas.height * 0.22;
-      const sheenHeight = Math.max(24, canvas.height * 0.14);
-      const sheen = ctx.createLinearGradient(0, sheenTop, 0, sheenTop + sheenHeight);
+      // Glossy diagonal sheen drawn as a diagonal gradient across the whole canvas
+      const sheen = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
       sheen.addColorStop(0, 'rgba(255,255,255,0)');
-      sheen.addColorStop(0.45, 'rgba(255,255,255,0.85)');
-      sheen.addColorStop(0.55, 'rgba(255,255,255,0.45)');
+      // tighten stops to create a much thinner bright band and reduce intensity
+      sheen.addColorStop(0.495, 'rgba(255,255,255,0.60)');
+      sheen.addColorStop(0.5, 'rgba(255,255,255,0.35)');
+      sheen.addColorStop(0.505, 'rgba(255,255,255,0.12)');
       sheen.addColorStop(1, 'rgba(255,255,255,0)');
       ctx.fillStyle = sheen;
-      ctx.fillRect(canvas.width * 0.06, sheenTop, canvas.width * 0.88, sheenHeight);
+      ctx.globalCompositeOperation = 'lighter';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.globalCompositeOperation = 'source-over';
 
-      // Subtle repeating micro-sheen lines for metallic texture
+      // Fine micro-sheen lines for metallic texture (subtle)
       ctx.globalAlpha = 0.06;
-      for (let i = 0; i < 6; i++) {
-        const y = sheenTop + (i - 3) * 6;
-        ctx.fillStyle = 'rgba(255,255,255,0.9)';
-        ctx.fillRect(canvas.width * 0.06, y, canvas.width * 0.88, 1);
+      ctx.fillStyle = 'rgba(255,255,255,1)';
+      for (let i = -8; i <= 8; i++) {
+        const t = (i / 16) * canvas.height * 0.6;
+        // draw thin diagonal lines by mapping y offsets
+        ctx.beginPath();
+        ctx.moveTo(0, canvas.height * 0.15 + t);
+        ctx.lineTo(canvas.width, canvas.height * 0.25 + t);
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.9)';
+        ctx.stroke();
       }
       ctx.globalAlpha = 1;
-      ctx.restore();
 
       // Premium maroon text over the gold overlay
       ctx.fillStyle = config.theme.colors.maroonDeep || '#26080D';

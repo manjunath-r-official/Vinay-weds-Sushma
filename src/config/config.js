@@ -124,8 +124,8 @@ const config = {
     colors: {
       maroon: '#3B0D14',
       maroonDeep: '#26080D',
-      gold: '#ecbe5b',
-      goldBright: '#f5c54c',
+      gold: '#f3b720',
+      goldBright: '#f7d13a',
       ivory: '#F6ECD9',
       emerald: '#0F5C4A',
       rose: '#E3B7A0',
