@@ -47,20 +47,12 @@ export default function Hero() {
           align-items: center;
           justify-content: center;
           margin: 0 auto;
+          position: relative;
+          z-index: 40;
         }
 
         @media (max-width: 640px) {
           .hero-overlay { width: 80%; margin-bottom: 2rem; }
-        }
-
-        .hero-title {
-          font-family: 'Great Vibes', ${config.theme.fonts.cinzel}, ${config.theme.fonts.display}, cursive;
-          color: ${config.theme.colors.maroonDeep};
-          font-size: clamp(40px, 12vw, 96px);
-          line-height: 0.9;
-          text-align: center;
-          letter-spacing: -0.02em;
-          text-shadow: 0 6px 18px rgba(0,0,0,0.2);
         }
 
         .hero-intro {
@@ -74,6 +66,17 @@ export default function Hero() {
           text-align: center;
           margin-left: auto;
           margin-right: auto;
+          font-family: 'Great Vibes', ${config.theme.fonts.display}, cursive;
+        }
+
+        .hero-title {
+          font-family: 'Great Vibes', ${config.theme.fonts.cinzel}, ${config.theme.fonts.display}, cursive;
+          color: ${config.theme.colors.maroonDeep};
+          font-size: clamp(40px, 12vw, 96px);
+          line-height: 0.9;
+          text-align: center;
+          letter-spacing: -0.02em;
+          text-shadow: 0 8px 28px rgba(0,0,0,0.45);
         }
       `}</style>
 
