@@ -27,6 +27,7 @@ import sapt7 from '../assets/images/saptapadi/7.png';
 import peacockPlaceholder from '../assets/images/peacock-placeholder.svg';
 // Background music (replace with your file in src/assets/audio/)
 import bgm from '../assets/audio/bgm.mp3';
+import coupleBg from '../assets/images/props/bg2.png';
 
 const config = {
   // ---------------------------------------------------------------- SEO
@@ -44,7 +45,7 @@ const config = {
     parents: 'Dr. Suresh & Mrs. Kavitha Raghunathan',
     photo: img3,
     story:
-      'A classical dancer with a weakness for filter coffee and old Ilaiyaraaja songs. Sushma believes every celebration deserves marigolds.',
+      '',
   },
   groom: {
     name: 'Vinay',
@@ -52,7 +53,7 @@ const config = {
     parents: 'Mr. Ramesh & Mrs. Lakshmi Srinivasan',
     photo: img2,
     story:
-      'An engineer who once wrote Sushma a love letter in Python comments. Vinay is happiest with a camera, a cricket bat, or both.',
+      '',
   },
   heroPhoto: img1,
 
@@ -85,11 +86,22 @@ const config = {
 
   // ---------------------------------------------------------- CONTACTS
   contacts: {
-    groomPhone: '+919876543210',
-    bridePhone: '+919876543211',
-    parentsPhone: '+919876543212',
-    whatsapp: '919876543210',
-    email: 'hello@sushmavinay.wedding',
+    groomPhone: '+917483147151',
+    bridePhone: '+917483147151',
+    parentsPhone: '+917483147151',
+    whatsapp: '917483147151',
+    //email: 'hello@sushmavinay.wedding',
+  },
+  contactsSection: {
+    title: 'Get In Touch',
+    items: [
+      { source: 'contacts.groomPhone', label: 'Call Vinay', icon: 'phone' },
+      { source: 'contacts.bridePhone', label: 'Call Sushma', icon: 'phone' },
+      { source: 'contacts.parentsPhone', label: 'Call Parents', icon: 'phone' },
+      { source: 'contacts.whatsapp', label: 'WhatsApp', icon: 'whatsapp' },
+      { source: 'contacts.email', label: 'Instagram', icon: 'instagram' },
+      { source: 'venue.mapsLink', label: 'Directions', icon: 'map' },
+    ],
   },
   instagram: 'https://instagram.com/sushmavinay',
 
@@ -139,6 +151,9 @@ const config = {
   eventsSection: {
     sectionBackgroundImage: '', // e.g. '/src/assets/images/events-bg.jpg'
     sectionBackgroundOverlayOpacity: 0.55, // darkens the bg image so text stays readable
+  },
+  coupleSection: {
+    backgroundImage: coupleBg,
   },
   events: [
     {
