@@ -26,7 +26,7 @@ export default function Couple() {
           />
           <h3 className="font-display text-3xl mt-5 mb-1" style={{ color: config.theme.colors.emerald }}>{config.bride.name}</h3>
           <div className="text-xs tracking-widest uppercase mb-3" style={{ color: config.theme.colors.maroonDeep }}>The Bride</div>
-          <p className="leading-relaxed" style={{ color: config.theme.colors.ink }}>Daughter of {config.bride.parents}</p>
+          <p className="leading-relaxed" style={{ color: config.theme.colors.ink }}>D/O {config.bride.parents}</p>
           <p className="leading-relaxed mt-2" style={{ color: config.theme.colors.ink }}>{config.bride.story}</p>
         </Reveal>
 
@@ -38,7 +38,7 @@ export default function Couple() {
           />
           <h3 className="font-display text-3xl mt-5 mb-1" style={{ color: config.theme.colors.emerald }}>{config.groom.name}</h3>
           <div className="text-xs tracking-widest uppercase mb-3" style={{ color: config.theme.colors.maroonDeep }}>The Groom</div>
-          <p className="leading-relaxed" style={{ color: config.theme.colors.ink }}>Son of {config.groom.parents}</p>
+          <p className="leading-relaxed" style={{ color: config.theme.colors.ink }}>S/O {config.groom.parents}</p>
           <p className="leading-relaxed mt-2" style={{ color: config.theme.colors.ink }}>{config.groom.story}</p>
         </Reveal>
       </div>

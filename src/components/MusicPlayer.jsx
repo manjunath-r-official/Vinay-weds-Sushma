@@ -57,6 +57,8 @@ export default function MusicPlayer({ startSignal = 0, visible = true }) {
 
     function handlePageHide() {
       if (!audio.paused) {
+        // Remember it was playing so we can resume when user returns
+        wasPlayingOnHide.current = true;
         audio.pause();
         setPlaying(false);
       }
@@ -65,11 +67,16 @@ export default function MusicPlayer({ startSignal = 0, visible = true }) {
     window.addEventListener('visibilitychange', handleVisibility);
     window.addEventListener('pagehide', handlePageHide);
     window.addEventListener('blur', handlePageHide);
+    // Also listen for focus/pageshow to attempt resume when user returns
+    window.addEventListener('focus', handleVisibility);
+    window.addEventListener('pageshow', handleVisibility);
 
     return () => {
       window.removeEventListener('visibilitychange', handleVisibility);
       window.removeEventListener('pagehide', handlePageHide);
       window.removeEventListener('blur', handlePageHide);
+      window.removeEventListener('focus', handleVisibility);
+      window.removeEventListener('pageshow', handleVisibility);
       audio.pause();
       audioRef.current = null;
     };
