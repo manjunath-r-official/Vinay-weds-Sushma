@@ -42,7 +42,7 @@ export default function Hero() {
         .hero-overlay {
           width: 36%;
           max-width: 640px;
-          padding: 1.5rem 1.25rem;
+          padding: 1rem 1.25rem;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -52,12 +52,12 @@ export default function Hero() {
         }
 
         @media (max-width: 640px) {
-          .hero-overlay { width: 60%; margin-bottom: 2rem; }
+          .hero-overlay { width: 80%; margin-bottom: 2rem; }
         }
 
         .hero-intro {
           margin-bottom: 1.3rem;
-          font-size: clamp(12px, 1.8vw, 16px);
+          font-size: clamp(15px, 1.8vw, 16px);
           color: ${config.theme.colors.maroon};
           text-transform: none;
           opacity: 0.92;
