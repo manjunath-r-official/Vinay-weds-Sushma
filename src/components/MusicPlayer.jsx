@@ -15,6 +15,8 @@ export default function MusicPlayer({ startSignal = 0, visible = true }) {
 
     const audio = new Audio(config.backgroundMusic);
     audio.loop = true;
+    // Use configured volume from config.js or fall back to 30%
+    audio.volume = typeof config.backgroundMusicVolume === 'number' ? config.backgroundMusicVolume : 0.3;
     audioRef.current = audio;
 
     const pref = localStorage.getItem('weddingMusicPref');
