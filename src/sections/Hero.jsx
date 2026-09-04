@@ -8,6 +8,16 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative">
+      <div className="absolute left-1/2 -translate-x-1/2 z-30 god-badge" aria-hidden="true" style={{ top: config.coupleSection?.godTop || '2%' }}>
+        {config.coupleSection?.godImage && (
+          <img src={config.coupleSection.godImage} alt="" style={{ width: 64, height: 'auto', display: 'block', margin: '0 auto' }} />
+        )}
+        {config.coupleSection?.godSubtitle && (
+          <div style={{ textAlign: 'center', marginTop: 6, fontSize: '12px', color: config.theme.colors.maroon, opacity: 0.9 }}>
+            {config.coupleSection.godSubtitle}
+          </div>
+        )}
+      </div>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
@@ -22,6 +32,8 @@ export default function Hero() {
           background-position: center center;
           background-repeat: no-repeat;
         }
+
+        .god-badge { }
 
         @media (min-width: 768px) {
           .hero-bg { background-image: url('${heroBig}'); }

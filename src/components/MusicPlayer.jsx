@@ -31,7 +31,43 @@ export default function MusicPlayer({ startSignal = 0, visible = true }) {
       setPlaying(false);
     }
 
+    // Remember if audio was playing when page became hidden so we can resume.
+    const wasPlayingOnHide = { current: false };
+
+    function handleVisibility() {
+      if (document.hidden) {
+        if (!audio.paused) {
+          wasPlayingOnHide.current = true;
+          audio.pause();
+          setPlaying(false);
+        }
+      } else {
+        if (wasPlayingOnHide.current) {
+          // Resume only if user preference allows
+          const pref2 = localStorage.getItem('weddingMusicPref');
+          if (pref2 !== 'off') {
+            audio.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+          }
+          wasPlayingOnHide.current = false;
+        }
+      }
+    }
+
+    function handlePageHide() {
+      if (!audio.paused) {
+        audio.pause();
+        setPlaying(false);
+      }
+    }
+
+    window.addEventListener('visibilitychange', handleVisibility);
+    window.addEventListener('pagehide', handlePageHide);
+    window.addEventListener('blur', handlePageHide);
+
     return () => {
+      window.removeEventListener('visibilitychange', handleVisibility);
+      window.removeEventListener('pagehide', handlePageHide);
+      window.removeEventListener('blur', handlePageHide);
       audio.pause();
       audioRef.current = null;
     };

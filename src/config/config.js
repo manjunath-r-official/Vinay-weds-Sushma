@@ -28,6 +28,7 @@ import peacockPlaceholder from '../assets/images/peacock-placeholder.svg';
 // Background music (replace with your file in src/assets/audio/)
 import bgm from '../assets/audio/bgm.mp3';
 import coupleBg from '../assets/images/props/bg2.png';
+import godImg from '../assets/images/props/god.png';
 
 const config = {
   // ---------------------------------------------------------------- SEO
@@ -154,6 +155,9 @@ const config = {
   },
   coupleSection: {
     backgroundImage: coupleBg,
+    godImage: godImg,
+    godSubtitle: '|| Sri Nanjundeshwara Swamy Prasanna ||',
+    godTop: '2%'
   },
   events: [
     {
