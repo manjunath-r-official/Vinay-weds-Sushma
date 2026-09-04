@@ -50,7 +50,7 @@ export default function Hero() {
         }
 
         @media (max-width: 640px) {
-          .hero-overlay { width: 70%; margin-bottom: 2rem; }
+          .hero-overlay { width: 80%; margin-bottom: 2rem; }
         }
 
         .hero-title {
