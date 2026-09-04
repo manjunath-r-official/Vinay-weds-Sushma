@@ -34,13 +34,51 @@ export default function ScratchSurprise({ onCelebrate }) {
     function sizeCanvas() {
       canvas.width = wrapper.clientWidth;
       canvas.height = wrapper.clientHeight;
+
+      const gBright = config.theme.colors.goldBright || '#E8C874';
+      const gDark = config.theme.colors.gold || '#f4c35a';
+      // Base diagonal gold gradient with multiple stops for a richer wrap
       const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-      grad.addColorStop(0, '#C9A24B');
-      grad.addColorStop(1, '#7a5a24');
+      grad.addColorStop(0, gBright);
+      grad.addColorStop(0.18, '#fff8e6');
+      grad.addColorStop(0.32, gBright);
+      grad.addColorStop(0.5, '#fffefb');
+      grad.addColorStop(0.66, gDark);
+      grad.addColorStop(1, gDark);
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = 'rgba(59,13,20,.9)';
-      ctx.font = "600 15px Cinzel, serif";
+
+      // Add a glossy diagonal sheen (narrow band) across the wrapper
+      ctx.save();
+      // rotate slightly to create a diagonal highlight
+      const angle = -0.75; // radians
+      ctx.translate(canvas.width / 2, canvas.height / 2);
+      ctx.rotate(angle);
+      ctx.translate(-canvas.width / 2, -canvas.height / 2);
+
+      const sheenTop = canvas.height * 0.22;
+      const sheenHeight = Math.max(24, canvas.height * 0.14);
+      const sheen = ctx.createLinearGradient(0, sheenTop, 0, sheenTop + sheenHeight);
+      sheen.addColorStop(0, 'rgba(255,255,255,0)');
+      sheen.addColorStop(0.45, 'rgba(255,255,255,0.85)');
+      sheen.addColorStop(0.55, 'rgba(255,255,255,0.45)');
+      sheen.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = sheen;
+      ctx.fillRect(canvas.width * 0.06, sheenTop, canvas.width * 0.88, sheenHeight);
+
+      // Subtle repeating micro-sheen lines for metallic texture
+      ctx.globalAlpha = 0.06;
+      for (let i = 0; i < 6; i++) {
+        const y = sheenTop + (i - 3) * 6;
+        ctx.fillStyle = 'rgba(255,255,255,0.9)';
+        ctx.fillRect(canvas.width * 0.06, y, canvas.width * 0.88, 1);
+      }
+      ctx.globalAlpha = 1;
+      ctx.restore();
+
+      // Premium maroon text over the gold overlay
+      ctx.fillStyle = config.theme.colors.maroonDeep || '#26080D';
+      ctx.font = "700 15px Cinzel, serif";
       ctx.textAlign = 'center';
       ctx.fillText('✦ SCRATCH TO REVEAL THE DATE ✦', canvas.width / 2, canvas.height / 2);
     }
@@ -119,10 +157,10 @@ export default function ScratchSurprise({ onCelebrate }) {
 
       <Reveal variant="scale">
         <div ref={wrapperRef} className="relative max-w-[420px] mx-auto rounded-2xl overflow-hidden shadow-royal">
-          <div className="px-6 py-14 text-center min-h-[260px] flex flex-col items-center justify-center" style={{ background: 'linear-gradient(160deg,#3d1a20,#1e0509)' }}>
-            <span className="text-3xl mb-3">💍</span>
-            <h4 className="font-display text-3xl text-gold-bright mb-2 leading-snug">{dateStr}</h4>
-            <p className="text-rose text-[15px]">{config.scratchSurprise.subtitle}</p>
+          <div className="px-6 py-14 text-center min-h-[260px] flex flex-col items-center justify-center" style={{ background: config.theme.colors.ivory }}>
+            <span className="text-3xl mb-3" style={{ color: config.theme.colors.maroonDeep }}>💍</span>
+            <h4 className="font-display text-3xl mb-2 leading-snug" style={{ color: config.theme.colors.goldBright }}>{dateStr}</h4>
+            <p className="text-[15px]" style={{ color: config.theme.colors.maroon }}>{config.scratchSurprise.subtitle}</p>
           </div>
           {!revealed && (
             <canvas
