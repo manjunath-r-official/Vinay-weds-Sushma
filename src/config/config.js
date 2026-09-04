@@ -41,16 +41,16 @@ const config = {
   // ------------------------------------------------------------- COUPLE
   bride: {
     name: 'Sushma',
-    fullName: 'Sushma Raghunathan',
-    parents: 'Dr. Suresh & Mrs. Kavitha Raghunathan',
+    fullName: 'Sushma.L.P',
+    parents: 'Sri B.A. Prakash & Smt. Late Latha',
     photo: img3,
     story:
       '',
   },
   groom: {
     name: 'Vinay',
-    fullName: 'Vinay Srinivasan',
-    parents: 'Mr. Ramesh & Mrs. Lakshmi Srinivasan',
+    fullName: 'Vinay.R',
+    parents: 'Late Sri Rudra Aradhya & Smt. Manjula',
     photo: img2,
     story:
       '',
