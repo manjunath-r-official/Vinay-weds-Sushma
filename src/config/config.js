@@ -375,6 +375,8 @@ const config = {
   navigation: {
     style: 'feather-drawer', // 'feather-drawer' | 'bar' (classic always-visible bar)
     peacockIcon: peacockPlaceholder,
+    // Enable or disable the floating navigation (feather trigger + drawer)
+    floatingEnabled: false,
   },
 
   // ------------------------------------------------------------ ANIMATION

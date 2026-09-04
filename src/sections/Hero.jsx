@@ -40,12 +40,17 @@ export default function Hero() {
         }
 
         .hero-overlay {
-          width: 100%;
-          max-width: 1200px;
-          padding: 3.5rem 1.25rem;
+          width: 36%;
+          max-width: 640px;
+          padding: 1.5rem 1.25rem;
           display: flex;
           align-items: center;
           justify-content: center;
+          margin: 0 auto;
+        }
+
+        @media (max-width: 640px) {
+          .hero-overlay { width: 70%; margin-bottom: 2rem; }
         }
 
         .hero-title {
@@ -58,20 +63,25 @@ export default function Hero() {
           text-shadow: 0 6px 18px rgba(0,0,0,0.2);
         }
 
-        .hero-sub {
-          margin-top: 0.6rem;
-          font-size: clamp(14px, 2.2vw, 20px);
+        .hero-intro {
+          margin-bottom: 1.3rem;
+          font-size: clamp(12px, 1.8vw, 16px);
           color: ${config.theme.colors.maroon};
           text-transform: none;
-          opacity: 0.95;
+          opacity: 0.92;
+          max-width: 56ch;
+          line-height: 1.4;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
         }
       `}</style>
 
       <div className="hero-bg">
         <div className="hero-overlay">
           <div>
-            <h1 className="hero-title">{groom} <span style={{ display: 'block', fontSize: '0.45em', opacity: 0.9 }}>weds</span> {bride}</h1>
-            <p className="hero-sub">Together with their families</p>
+            <p className="hero-intro">Together with our families, we solicite your gracious presence and blessings on the auspicious occasion of the wedding celebration of</p>
+            <h1 className="hero-title">{groom} <span style={{ display: 'block', fontSize: '0.45em', opacity: 0.9 }}>with</span> {bride}</h1>
           </div>
         </div>
       </div>

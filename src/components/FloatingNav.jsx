@@ -24,6 +24,8 @@ const LINKS = [
  * placeholder mark is used until then.
  */
 export default function FloatingNav() {
+  // Respect config flag to disable the floating nav entirely.
+  if (config.navigation && config.navigation.floatingEnabled === false) return null;
   const [open, setOpen] = useState(false);
   const drawerRef = useRef(null);
 
