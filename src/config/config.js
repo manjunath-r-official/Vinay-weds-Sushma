@@ -110,7 +110,7 @@ const config = {
   // Path to an mp3 in src/assets/audio/. Leave empty string to disable.
   backgroundMusic: bgm,
   // Default background music volume (0.0 - 1.0). Change to 0.0 to mute.
-  backgroundMusicVolume: 0.2,
+  backgroundMusicVolume: 1.0,
   soundEffects: {
     templeBells: '',
     doorOpen: '',
