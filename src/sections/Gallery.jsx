@@ -4,59 +4,80 @@ import Reveal from '../components/Reveal.jsx';
 import config from '../config/config.js';
 
 export default function Gallery() {
-  const [active, setActive] = useState(null);
+  const items = config.gallery || [];
+  const n = items.length;
+  const [index, setIndex] = useState(0);
+
+  if (n === 0) return null;
+
+  const prev = (index - 1 + n) % n;
+  const next = (index + 1) % n;
+
+  function goto(i) {
+    setIndex((i + n) % n);
+  }
+
+  function handleDragEnd(event, info) {
+    const offset = info.offset.x;
+    const velocity = info.velocity.x;
+    // swipe left => show next, swipe right => show prev
+    if (offset < -80 || velocity < -500) {
+      goto(index + 1);
+    } else if (offset > 80 || velocity > 500) {
+      goto(index - 1);
+    }
+  }
 
   return (
-    <section id="gallery" className="section max-w-[1120px] mx-auto px-5 py-28">
+    <section id="gallery" className="section max-w-[1120px] mx-auto px-5 py-20">
       <Reveal className="text-center">
         <span className="inline-block tracking-[0.28em] uppercase text-xs text-gold-bright mb-3">Moments</span>
         <h2 className="font-display font-medium text-ivory" style={{ fontSize: 'clamp(34px,6vw,58px)' }}>Gallery</h2>
-        <p className="text-rose italic max-w-md mx-auto mt-2 mb-12">A few frames from the story so far.</p>
+        <p className="text-rose italic max-w-md mx-auto mt-2 mb-8">A few frames from the story so far.</p>
       </Reveal>
 
-      <div className="[column-width:220px] [column-gap:14px] md:[column-width:240px]">
-        {config.gallery.map((item, i) => (
-          <Reveal key={item.src} variant="scale" delay={(i % 6) * 0.05} className="mb-3.5 break-inside-avoid">
-            <img
-              src={item.src}
-              alt={`Wedding gallery ${i + 1}`}
-              loading="lazy"
-              className="w-full block rounded-xl cursor-zoom-in shadow-lg hover:scale-[1.02] transition-transform duration-300"
-              onClick={() => setActive(item.src)}
-            />
-          </Reveal>
-        ))}
-      </div>
+      <div className="relative flex items-center justify-center mt-8">
+        {/* Left (previous) image - behind and slightly rotated */}
+        <motion.img
+          src={items[prev].src}
+          alt={`Previous ${prev + 1}`}
+          className="absolute rounded-xl shadow-xl"
+          style={{ width: '72%', filter: 'blur(0px) grayscale(.01)', transformOrigin: 'center' }}
+          initial={{ x: '-22%', scale: 0.96, rotate: -2, opacity: 0.98 }}
+          animate={{ x: '-22%', scale: 0.96, rotate: -2, opacity: 0.98 }}
+          transition={{ duration: 0.28 }}
+        />
 
-      <AnimatePresence>
-        {active && (
-          <motion.div
-            className="fixed inset-0 z-[120] flex items-center justify-center p-8"
-            style={{ background: 'rgba(10,3,5,.94)' }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setActive(null)}
-          >
-            <button
-              className="absolute top-6 right-7 text-3xl text-gold-bright"
-              aria-label="Close"
-              onClick={() => setActive(null)}
-            >
-              ×
-            </button>
-            <motion.img
-              src={active}
-              alt="Enlarged wedding photo"
-              className="max-w-[92vw] max-h-[86vh] rounded-lg shadow-2xl"
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.9 }}
-              onClick={(e) => e.stopPropagation()}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+        {/* Center (current) image - prominent and draggable */}
+        <motion.img
+          src={items[index].src}
+          alt={`Current ${index + 1}`}
+          className="relative rounded-xl shadow-2xl cursor-grab"
+          style={{ width: '89%', zIndex: 100 }}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.25}
+          onDragEnd={handleDragEnd}
+          whileTap={{ cursor: 'grabbing' }}
+          initial={{ scale: 1 }}
+          animate={{ scale: 1 }}
+          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+        />
+
+        {/* Right (next) image - ahead and slightly rotated/out of focus */}
+        <motion.img
+          src={items[next].src}
+          alt={`Next ${next + 1}`}
+          className="absolute rounded-xl shadow-xl"
+          style={{ width: '72%', filter: 'blur(0px) grayscale(.01)', transformOrigin: 'center' }}
+          initial={{ x: '22%', scale: 0.96, rotate: 2, opacity: 0.98 }}
+          animate={{ x: '22%', scale: 0.96, rotate: 2, opacity: 0.98 }}
+          transition={{ duration: 0.28 }}
+        />
+
+        {/* Navigation controls removed — swipe/drag to navigate */}
+      </div>
+      
     </section>
   );
 }
