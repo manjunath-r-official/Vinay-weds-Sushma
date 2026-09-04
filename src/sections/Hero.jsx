@@ -42,7 +42,7 @@ export default function Hero() {
         .hero-overlay {
           width: 36%;
           max-width: 640px;
-          padding: 1rem 1.25rem;
+          padding: 0rem 1.25rem;
           display: flex;
           align-items: center;
           justify-content: center;
