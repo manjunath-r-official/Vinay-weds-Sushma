@@ -52,27 +52,28 @@ export default function ScratchSurprise({ onCelebrate }) {
       // Glossy diagonal sheen drawn as a diagonal gradient across the whole canvas
       const sheen = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
       sheen.addColorStop(0, 'rgba(255,255,255,0)');
-      // tighten stops to create a much thinner bright band and reduce intensity
-      sheen.addColorStop(0.495, 'rgba(255,255,255,0.60)');
-      sheen.addColorStop(0.5, 'rgba(255,255,255,0.35)');
-      sheen.addColorStop(0.505, 'rgba(255,255,255,0.12)');
+      // very narrow, subtle bright band centered near the middle
+      sheen.addColorStop(0.497, 'rgba(255,255,255,0)');
+      sheen.addColorStop(0.499, 'rgba(255,255,255,0.16)');
+      sheen.addColorStop(0.5, 'rgba(255,255,255,0.28)');
+      sheen.addColorStop(0.501, 'rgba(255,255,255,0.12)');
+      sheen.addColorStop(0.503, 'rgba(255,255,255,0)');
       sheen.addColorStop(1, 'rgba(255,255,255,0)');
       ctx.fillStyle = sheen;
-      ctx.globalCompositeOperation = 'lighter';
+      ctx.save();
+      ctx.globalAlpha = 0.18; // lower overall sheen intensity
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.globalCompositeOperation = 'source-over';
+      ctx.restore();
 
-      // Fine micro-sheen lines for metallic texture (subtle)
-      ctx.globalAlpha = 0.06;
-      ctx.fillStyle = 'rgba(255,255,255,1)';
-      for (let i = -8; i <= 8; i++) {
-        const t = (i / 16) * canvas.height * 0.6;
-        // draw thin diagonal lines by mapping y offsets
+      // Very subtle micro-sheen lines for metallic texture
+      ctx.globalAlpha = 0.01;
+      ctx.strokeStyle = 'rgba(255,255,255,1)';
+      ctx.lineWidth = 1;
+      for (let i = -2; i <= 2; i++) {
+        const t = (i / 5) * canvas.height * 0.35;
         ctx.beginPath();
-        ctx.moveTo(0, canvas.height * 0.15 + t);
-        ctx.lineTo(canvas.width, canvas.height * 0.25 + t);
-        ctx.lineWidth = 1;
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.9)';
+        ctx.moveTo(0, canvas.height * 0.18 + t);
+        ctx.lineTo(canvas.width, canvas.height * 0.26 + t);
         ctx.stroke();
       }
       ctx.globalAlpha = 1;
