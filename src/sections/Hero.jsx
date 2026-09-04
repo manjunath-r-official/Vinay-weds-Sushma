@@ -10,10 +10,10 @@ export default function Hero() {
     <section id="hero" className="relative">
       <div className="absolute left-1/2 -translate-x-1/2 z-30 god-badge" aria-hidden="true" style={{ top: config.coupleSection?.godTop || '2%' }}>
         {config.coupleSection?.godImage && (
-          <img src={config.coupleSection.godImage} alt="" style={{ width: 64, height: 'auto', display: 'block', margin: '0 auto' }} />
+          <img src={config.coupleSection.godImage} alt="" style={{ width: 44, height: 'auto', display: 'block', margin: '0 auto' }} />
         )}
         {config.coupleSection?.godSubtitle && (
-          <div style={{ textAlign: 'center', marginTop: 6, fontSize: '12px', color: config.theme.colors.maroon, opacity: 0.9 }}>
+          <div style={{ textAlign: 'center', marginTop: 6, fontSize: '8px', color: config.theme.colors.maroon, opacity: 0.9 }}>
             {config.coupleSection.godSubtitle}
           </div>
         )}
