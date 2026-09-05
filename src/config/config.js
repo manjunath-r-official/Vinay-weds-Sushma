@@ -130,6 +130,7 @@ const config = {
       emerald: '#0F5C4A',
       rose: '#E3B7A0',
       ink: '#241008',
+      realGold: '#fbbe23'
     },
     // Per-event readable text colors (override defaults for specific events)
     colorsByEvent: {

@@ -35,16 +35,16 @@ export default function ScratchSurprise({ onCelebrate }) {
       canvas.width = wrapper.clientWidth;
       canvas.height = wrapper.clientHeight;
 
-      const gBright = config.theme.colors.goldBright || '#E8C874';
-      const gDark = config.theme.colors.gold || '#C9A24B';
+      const gBright = config.theme.colors.maroonDeep || '#E8C874';
+      const gDark = config.theme.colors.realGold || '#C9A24B';
 
       // Base diagonal gold gradient across the canvas (aligned correctly)
       const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
       grad.addColorStop(0, gBright);
-      grad.addColorStop(0.18, '#fff8e6');
-      grad.addColorStop(0.32, gBright);
-      grad.addColorStop(0.5, '#fffefb');
-      grad.addColorStop(0.66, gDark);
+      grad.addColorStop(0.48, '#fbbe23');
+      grad.addColorStop(0.99, gBright);
+      //grad.addColorStop(0.8, '#fbbe23');
+      //grad.addColorStop(0.9, gDark);
       grad.addColorStop(1, gDark);
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -161,7 +161,7 @@ export default function ScratchSurprise({ onCelebrate }) {
         <div ref={wrapperRef} className="relative max-w-[420px] mx-auto rounded-2xl overflow-hidden shadow-royal">
           <div className="px-6 py-14 text-center min-h-[260px] flex flex-col items-center justify-center" style={{ background: config.theme.colors.ivory }}>
             <span className="text-3xl mb-3" style={{ color: config.theme.colors.maroonDeep }}>💍</span>
-            <h4 className="font-display text-3xl mb-2 leading-snug" style={{ color: config.theme.colors.goldBright }}>{dateStr}</h4>
+            <h4 className="font-display text-3xl mb-2 leading-snug" style={{ color: config.theme.colors.maroonDeep }}>{dateStr}</h4>
             <p className="text-[15px]" style={{ color: config.theme.colors.maroon }}>{config.scratchSurprise.subtitle}</p>
           </div>
           {!revealed && (
@@ -173,7 +173,7 @@ export default function ScratchSurprise({ onCelebrate }) {
           )}
           {!revealed && (
             <div className="absolute bottom-3.5 left-1/2 -translate-x-1/2 text-xs tracking-widest uppercase text-white/70 pointer-events-none">
-              Scratch to reveal
+              {/* Scratch to reveal */}
             </div>
           )}
         </div>

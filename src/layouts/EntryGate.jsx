@@ -49,11 +49,11 @@ export default function EntryGate({ onEnter, onMusicStart, petalBurst }) {
                 margin: 0,
               }}
             >
-              <div className="text-center shrink-0 px-2 pt-2">
+              {/* <div className="text-center shrink-0 px-2 pt-2">
                 <h1 className="font-cinzel text-xl sm:text-2xl md:text-4xl text-ivory">
                   {config.bride.name} &amp; {config.groom.name}
                 </h1>
-              </div>
+              </div> */}
               <div className="w-full flex-1 min-h-0" style={{ maxWidth: '100vw' }}>
                 <RoyalDoor3D onOpened={handleDoorOpened} />
               </div>
