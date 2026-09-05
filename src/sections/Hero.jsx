@@ -84,7 +84,7 @@ export default function Hero() {
         <div className="hero-overlay">
           <div>
             <p className="hero-intro">Together with our families, we solicite your gracious presence and blessings on the auspicious occasion of the wedding celebration of</p>
-            <h1 className="hero-title">{groom} <span style={{ display: 'block', fontSize: '0.45em', opacity: 0.9 }}>with</span> {bride}</h1>
+            <h1 className="hero-title">{groom} <span style={{ display: 'block', fontSize: '0.45em', opacity: 0.9 }}>and</span> {bride}</h1>
           </div>
         </div>
       </div>

@@ -15,11 +15,11 @@ export default function EasterEggs({ onCelebrate }) {
   return (
     <section className="section max-w-[1120px] mx-auto px-5 py-24 text-center">
       <Reveal>
-        <span className="inline-block tracking-[0.28em] uppercase text-xs text-gold-bright mb-3">A Few Secrets</span>
-        <h2 className="font-display font-medium text-ivory mb-3" style={{ fontSize: 'clamp(34px,6vw,58px)' }}>Tap to Discover</h2>
+        <span className="inline-block tracking-[0.28em] uppercase text-xs text-gold-bright mb-3">Meaning of Saptapadi</span>
+        <h2 className="font-display font-medium text-ivory mb-3" style={{ fontSize: 'clamp(34px,6vw,58px)' }}>Tap to discover</h2>
       </Reveal>
 
-      <div className="flex justify-center gap-9 flex-wrap mt-2.5">
+      <div className="flex justify-center gap-8 flex-wrap mt-2.5">
         {config.easterEggs.map((egg) => (
           <motion.button
             key={egg.id}

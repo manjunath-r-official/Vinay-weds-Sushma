@@ -74,16 +74,16 @@ export default function App() {
           {/* <Countdown /> */}
           <Gallery />
           {/* <PhotoCarousel /> */}
-          <Family />
+          {/* <Family /> */}
           <Venue />
-          <RSVP onCelebrate={burstAmbient} />
+          {/* <RSVP onCelebrate={burstAmbient} /> */}
           <Contact />
-          <MemoryWall />
-          <EasterEggs onCelebrate={burstAmbient} />
+          {/* <MemoryWall /> */}
+          <EasterEggs onCelebrate={celebrateWithConfetti} />
         </main>
         <footer className="text-center py-16 px-5 text-rose text-[13px] tracking-wide">
-          <span className="font-devanagari text-xl block mb-2.5 text-gold-bright">धन्यवाद</span>
-          With love, {config.bride.name} &amp; {config.groom.name} — see you at the celebration.
+          <span className="font-devanagari text-xl block mb-2.5 text-gold-bright">Thank you</span>
+          With love, {config.bride.name} &amp; {config.groom.name} - see you at the celebration.
         </footer>
         <MusicPlayer startSignal={musicStartSignal} visible={entered} />
       </div>

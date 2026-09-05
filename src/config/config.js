@@ -68,7 +68,7 @@ const config = {
   },
 
   // ------------------------------------------------------------- DATES
-  weddingDate: '2026-09-21T09:00:00',
+  weddingDate: '2026-09-21T10:00:00',
   receptionDate: '2026-09-20T19:00:00',
 
   // ------------------------------------------------------------- VENUE
@@ -166,9 +166,9 @@ const config = {
     {
       name: 'Haldi',
       icon: '🌼',
-      date: 'Dec 10, 2026',
-      time: '10:00 AM',
-      venue: 'Family Residence, Delhi',
+      date: 'Sept 20, 2026',
+      time: '10:00 PM',
+      venue: 'Prakruthi vilasa, Bangalore',
       // dressCode: 'Yellow Attire',
       description: 'A joyful morning of turmeric, laughter, and blessings from both families.',
       backgroundImage: haldiImg, // optional per-card override
@@ -176,9 +176,9 @@ const config = {
     {
       name: 'Mehendi',
       icon: '🌿',
-      date: 'Dec 10, 2026',
-      time: '4:00 PM',
-      venue: 'Garden Courtyard',
+      date: 'Sept 18, 2026',
+      time: '10:00 AM',
+      venue: 'Aradhya Nilaya, Bangalore',
       // dressCode: 'Green & Gold',
       description: 'Intricate henna, live dhol, and an evening of stories and sweets.',
       backgroundImage: mehandiImg,
@@ -196,9 +196,9 @@ const config = {
     {
       name: 'Reception',
       icon: '🥂',
-      date: 'Dec 13, 2026',
+      date: 'Sept 20, 2026',
       time: '7:00 PM',
-      venue: 'Crystal Ballroom, The Leela Palace',
+      venue: 'Prakruthi Vilasa, Bangalore',
       // dressCode: 'Formal / Black Tie',
       description: 'An elegant evening to celebrate the newlyweds with dinner and dance.',
       backgroundImage: receptionImg,
@@ -206,9 +206,9 @@ const config = {
     {
       name: 'Wedding',
       icon: '💍',
-      date: 'Dec 12, 2026',
-      time: '9:00 AM',
-      venue: 'Main Mandap, The Leela Palace',
+      date: 'Sept 21, 2026',
+      time: '10:00 AM',
+      venue: 'Prakruthi Vilasa, Bangalore',
       // dressCode: 'Traditional Indian',
       description: 'Sacred vows exchanged around the holy fire, as our families become one.',
       backgroundImage: weddingImg,
@@ -327,7 +327,7 @@ const config = {
   // duplicate the date here. `subtitle` is the line shown under the date
   // once revealed; customize freely.
   scratchSurprise: {
-    subtitle: "Mark your calendar — we can't wait to celebrate with you.",
+    subtitle: "Mark your calendar - we can't wait to celebrate with you.",
   },
 
   // ------------------------------------------------------------ RSVP
@@ -346,10 +346,13 @@ const config = {
 
   // ------------------------------------------------------------ EASTER EGGS
   easterEggs: [
-    { id: 'moon', icon: '🌙', message: 'The moonlight blesses your journey together 🌙' },
-    { id: 'diya', icon: '🪔', message: 'May your home always glow with warmth 🪔' },
-    { id: 'peacock', icon: '🦚', message: 'The peacock dances for the joy in your hearts 🦚' },
-    { id: 'lotus', icon: '🌷', message: 'A lotus blooms — pure beginnings, endless love 🪷' },
+    { id: 'moon', icon: '1', message: 'We walk together with faith, trust, and a shared purpose.🌙' },
+    { id: 'diya', icon: '2', message: 'We nurture strength, harmony, and a life of togetherness.🪔' },
+    { id: 'peacock', icon: '3', message: 'We honour prosperity, wisdom, and the blessings of family.🦚' },
+    { id: 'lotus', icon: '4', message: 'We grow in love, comfort, and mutual respect every day. 🪷' },
+    { id: 'moon', icon: '5', message: 'We cherish courage, compassion, and a life rooted in grace.🌙' },
+    { id: 'diya', icon: '6', message: 'We walk in devotion, loyalty, and the light of union. 🪔' },
+    { id: 'peacock', icon: '7', message: 'We vow to remain one in joy, sorrow, and forever. 🦚' },
   ],
 
   // ------------------------------------------------------------ AMBIENT LAYER
