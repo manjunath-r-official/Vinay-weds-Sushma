@@ -96,9 +96,9 @@ const config = {
   contactsSection: {
     title: 'Get In Touch',
     items: [
-      { source: 'contacts.groomPhone', label: 'Call Vinay', icon: 'phone' },
-      { source: 'contacts.bridePhone', label: 'Call Sushma', icon: 'phone' },
-      { source: 'contacts.parentsPhone', label: 'Call Parents', icon: 'phone' },
+      // { source: 'contacts.groomPhone', label: 'Call Vinay', icon: 'phone' },
+      // { source: 'contacts.bridePhone', label: 'Call Sushma', icon: 'phone' },
+      { source: 'contacts.parentsPhone', label: 'Contact us', icon: 'phone' },
       { source: 'contacts.whatsapp', label: 'WhatsApp', icon: 'whatsapp' },
       { source: 'contacts.email', label: 'Instagram', icon: 'instagram' },
       { source: 'venue.mapsLink', label: 'Directions', icon: 'map' },
