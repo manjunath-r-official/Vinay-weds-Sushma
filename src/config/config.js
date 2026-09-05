@@ -95,6 +95,17 @@ const config = {
   },
   contactsSection: {
     title: 'Get In Touch',
+    titleSmall: 'Need help?',
+    // Color configuration for contact section
+    colors: {
+      title: 'rgb(15, 92, 74)',           // ivory - main title color
+      titleSmall: '#F6ECD9',      // goldBright - subtitle color
+      cardBackground: 'rgba(15,92,74,.07)',  // card background
+      cardBorder: 'rgba(15,92,74,.25)',      // card border
+      icon: 'rgb(15, 92, 74)',            // goldBright - icon color
+      label: '#F6ECD9',           // ivory - label text color
+      overlay: 'rgba(10,3,5,0.15)', // background overlay opacity
+    },
     items: [
       // { source: 'contacts.groomPhone', label: 'Call Vinay', icon: 'phone' },
       // { source: 'contacts.bridePhone', label: 'Call Sushma', icon: 'phone' },
@@ -105,6 +116,20 @@ const config = {
     ],
   },
   instagram: 'https://instagram.com/sushmavinay',
+
+  // ---------------------------------------------------------- GALLERY
+  gallerySection: {
+    title: 'Gallery',
+    titleSmall: 'Moments',
+    subtitle: 'A few frames from the story so far.',
+    // Color configuration for gallery section
+    colors: {
+      title: '#0F5C4A',           // ivory - main title color
+      titleSmall: '#F6ECD9',      // goldBright - subtitle color
+      subtitle: '#F6ECD9',        // rose - subtitle text color
+      overlay: 'rgba(10,3,5,0.2)', // background overlay opacity
+    },
+  },
 
   // ------------------------------------------------------------- MUSIC
   // Path to an mp3 in src/assets/audio/. Leave empty string to disable.
@@ -159,7 +184,8 @@ const config = {
   coupleSection: {
     backgroundImage: coupleBg,
     godImage: godImg,
-    godSubtitle: '|| Sri Nanjundeshwara Swamy Prasanna ||',
+    //godSubtitle: '|| Sri Nanjundeshwara Swamy Prasanna ||',
+    godSubtitle: '',
     godTop: '2%'
   },
   events: [

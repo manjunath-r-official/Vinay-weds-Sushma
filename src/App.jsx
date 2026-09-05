@@ -79,7 +79,7 @@ export default function App() {
           {/* <RSVP onCelebrate={burstAmbient} /> */}
           <Contact />
           {/* <MemoryWall /> */}
-          <EasterEggs onCelebrate={celebrateWithConfetti} />
+          {/* <EasterEggs onCelebrate={celebrateWithConfetti} /> */}
         </main>
         <footer className="text-center py-16 px-5 text-rose text-[13px] tracking-wide">
           <span className="font-devanagari text-xl block mb-2.5 text-gold-bright">Thank you</span>

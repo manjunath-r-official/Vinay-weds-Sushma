@@ -1,6 +1,7 @@
 import { FiPhone, FiMessageCircle, FiMapPin, FiMail } from 'react-icons/fi';
 import Reveal from '../components/Reveal.jsx';
 import config from '../config/config.js';
+import contactBg from '../assets/images/props/bg2.png';
 
 function resolvePath(obj, path) {
   return path.split('.').reduce((acc, p) => (acc && acc[p] !== undefined ? acc[p] : undefined), obj);
@@ -57,15 +58,35 @@ export default function Contact() {
 
   const titleSmall = config.contactsSection?.titleSmall || 'Get In Touch';
   const titleMain = config.contactsSection?.title || 'Contact';
+  const contactColors = config.contactsSection?.colors || {
+    title: '#F6ECD9',
+    titleSmall: '#E8C874',
+    cardBackground: 'rgba(201,162,75,.07)',
+    cardBorder: 'rgba(201,162,75,.25)',
+    icon: '#E8C874',
+    label: '#F6ECD9',
+    overlay: 'rgba(10,3,5,0.2)',
+  };
 
   return (
-    <section id="contact" className="section max-w-[1120px] mx-auto px-5 py-28">
-      <Reveal className="text-center">
-        <span className="inline-block tracking-[0.28em] uppercase text-xs text-gold-bright mb-3">{titleSmall}</span>
-        <h2 className="font-display font-medium text-ivory mb-12" style={{ fontSize: 'clamp(34px,6vw,58px)' }}>{titleMain}</h2>
+    <section 
+      id="contact" 
+      className="section max-w-[1120px] mx-auto px-5 py-28 relative"
+      style={{ 
+        backgroundImage: `url(${contactBg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      <div className="absolute inset-0" style={{ background: contactColors.overlay }} />
+      
+      <Reveal className="text-center relative z-10">
+        <span className="inline-block tracking-[0.28em] uppercase text-xs mb-3" style={{ color: contactColors.titleSmall }}>{titleSmall}</span>
+        <h2 className="font-display font-medium mb-12" style={{ fontSize: 'clamp(34px,6vw,58px)', color: contactColors.title }}>{titleMain}</h2>
       </Reveal>
 
-      <Reveal>
+      <Reveal className="relative z-10">
         <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))' }}>
           {items.map((c) => (
             <a
@@ -73,10 +94,14 @@ export default function Contact() {
               href={c.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 py-6 px-3 rounded-2xl text-ivory no-underline transition-all hover:-translate-y-1"
-              style={{ background: 'rgba(201,162,75,.07)', border: '1px solid rgba(201,162,75,.25)' }}
+              className="flex flex-col items-center gap-2 py-6 px-3 rounded-2xl no-underline transition-all hover:-translate-y-1"
+              style={{ 
+                background: contactColors.cardBackground, 
+                border: `1px solid ${contactColors.cardBorder}`,
+                color: contactColors.label
+              }}
             >
-              <span className="text-2xl text-gold-bright">{c.icon}</span>
+              <span className="text-2xl" style={{ color: contactColors.icon }}>{c.icon}</span>
               <span className="text-[13px] tracking-wide">{c.label}</span>
             </a>
           ))}
