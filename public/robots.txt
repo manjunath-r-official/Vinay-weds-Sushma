@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ananyavikram.wedding/sitemap.xml
+Sitemap: https://vinay-sushma.vercel.app/sitemap.xml

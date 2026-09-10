@@ -1,4 +1,4 @@
-# Ananya & Vikram — Royal Wedding Invitation
+# Sushma & Vinay — Royal Wedding Invitation
 
 An ultra-premium, cinematic digital wedding invitation built with React,
 GSAP, Framer Motion, and Lenis smooth scroll.

@@ -10,8 +10,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'favicon.ico', 'apple-touch-icon.png'],
       manifest: {
-        name: 'Ananya & Vikram — Wedding Invitation',
-        short_name: 'A & V Wedding',
+        name: 'Sushma & Vinay - Wedding Invitation',
+        short_name: 'S & V Wedding',
         description: 'Join us as we begin our forever.',
         theme_color: '#3B0D14',
         background_color: '#26080D',
