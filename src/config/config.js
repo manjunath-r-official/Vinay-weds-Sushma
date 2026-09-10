@@ -354,6 +354,10 @@ const config = {
   // once revealed; customize freely.
   scratchSurprise: {
     subtitle: "Mark your calendar - we can't wait to celebrate with you.",
+    // Optional background image for the scratch card area. Point at a
+    // file inside `src/assets/images/`, e.g. '/src/assets/images/props/scratch-bg.png'
+    // Leave empty string to use the default solid color background.
+    backgroundImage: '/src/assets/images/props/scratchbg.png',
   },
 
   // ------------------------------------------------------------ RSVP

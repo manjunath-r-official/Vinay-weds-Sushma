@@ -159,7 +159,18 @@ export default function ScratchSurprise({ onCelebrate }) {
 
       <Reveal variant="scale">
         <div ref={wrapperRef} className="relative max-w-[420px] mx-auto rounded-2xl overflow-hidden shadow-royal">
-          <div className="px-6 py-14 text-center min-h-[260px] flex flex-col items-center justify-center" style={{ background: config.theme.colors.ivory }}>
+          <div
+            className="px-6 py-14 text-center min-h-[260px] flex flex-col items-center justify-center"
+            style={
+              config.scratchSurprise && config.scratchSurprise.backgroundImage
+                ? {
+                    backgroundImage: `url(${config.scratchSurprise.backgroundImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  }
+                : { background: config.theme.colors.ivory }
+            }
+          >
             <span className="text-3xl mb-3" style={{ color: config.theme.colors.maroonDeep }}>💍</span>
             <h4 className="font-display text-3xl mb-2 leading-snug" style={{ color: config.theme.colors.maroonDeep }}>{dateStr}</h4>
             <p className="text-[15px]" style={{ color: config.theme.colors.maroon }}>{config.scratchSurprise.subtitle}</p>
