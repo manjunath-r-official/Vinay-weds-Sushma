@@ -42,6 +42,7 @@ import peacockPlaceholder from '../assets/images/peacock-placeholder.svg';
 import bgm from '../assets/audio/bgm.mp3';
 import coupleBg from '../assets/images/props/bg2.png';
 import godImg from '../assets/images/props/god.png';
+import scratchBg from '../assets/images/props/scratchbg.png';
 
 const config = {
   // ---------------------------------------------------------------- SEO
@@ -382,7 +383,7 @@ const config = {
     // Optional background image for the scratch card area. Point at a
     // file inside `src/assets/images/`, e.g. '/src/assets/images/props/scratch-bg.png'
     // Leave empty string to use the default solid color background.
-    backgroundImage: '/src/assets/images/props/scratchbg.png',
+    backgroundImage: scratchBg,
   },
 
   // ------------------------------------------------------------ RSVP
