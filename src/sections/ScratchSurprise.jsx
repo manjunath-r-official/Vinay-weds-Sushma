@@ -150,7 +150,7 @@ export default function ScratchSurprise({ onCelebrate }) {
   }, []);
 
   return (
-    <section id="surprise" className="section max-w-[1120px] mx-auto px-5 py-28">
+    <section id="surprise" className="section max-w-[1120px] mx-auto px-2 py-28">
       <Reveal className="text-center">
         <span className="inline-block tracking-[0.28em] uppercase text-xs text-gold-bright mb-3">Shhh...</span>
         <h2 className="font-display font-medium text-ivory" style={{ fontSize: 'clamp(34px,6vw,58px)' }}>Save The Date</h2>
@@ -158,22 +158,23 @@ export default function ScratchSurprise({ onCelebrate }) {
       </Reveal>
 
       <Reveal variant="scale">
-        <div ref={wrapperRef} className="relative max-w-[420px] mx-auto rounded-2xl overflow-hidden shadow-royal">
-          <div
-            className="px-6 py-14 text-center min-h-[260px] flex flex-col items-center justify-center"
-            style={
-              config.scratchSurprise && config.scratchSurprise.backgroundImage
-                ? {
-                    backgroundImage: `url(${config.scratchSurprise.backgroundImage})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  }
-                : { background: config.theme.colors.ivory }
-            }
-          >
-            <span className="text-3xl mb-3" style={{ color: config.theme.colors.maroonDeep }}>💍</span>
-            <h4 className="font-display text-3xl mb-2 leading-snug" style={{ color: config.theme.colors.maroonDeep }}>{dateStr}</h4>
-            <p className="text-[15px]" style={{ color: config.theme.colors.maroon }}>{config.scratchSurprise.subtitle}</p>
+        <div
+          ref={wrapperRef}
+          className="relative max-w-[460px] mx-auto rounded-2xl overflow-hidden shadow-royal"
+          style={
+            config.scratchSurprise && config.scratchSurprise.backgroundImage
+              ? {
+                  backgroundImage: `url(${config.scratchSurprise.backgroundImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }
+              : { background: config.theme.colors.ivory }
+          }
+        >
+          <div className="px-6 py-8 text-center min-h-[220px] flex flex-col items-center justify-center" style={{ background: 'transparent' }}>
+            <span className="text-2xl mb-2" style={{ color: config.theme.colors.maroonDeep }}>💍</span>
+            <h4 className="font-display text-2xl mb-1 leading-snug" style={{ color: config.theme.colors.maroonDeep }}>{dateStr}</h4>
+            <p className="text-[13px]" style={{ color: config.theme.colors.maroon }}>{config.scratchSurprise.subtitle}</p>
           </div>
           {!revealed && (
             <canvas

@@ -7,12 +7,25 @@
 
 // Import assets so Vite includes them in the production build. Keep images
 // inside `src/assets/...` and update these imports when swapping photos.
-import img1 from '../assets/images/1.jpg';
-import img2 from '../assets/images/2.jpg';
-import img3 from '../assets/images/3.jpg';
-import img4 from '../assets/images/4.jpg';
-import img5 from '../assets/images/5.jpg';
-import img6 from '../assets/images/6.jpg';
+import img1 from '../assets/images/couple/1.jpg';
+import img2 from '../assets/images/couple/2.jpg';
+import img3 from '../assets/images/couple/3.jpg';
+import img4 from '../assets/images/couple/4.jpg';
+import img5 from '../assets/images/couple/5.jpg';
+import img6 from '../assets/images/couple/6.jpg';
+import img7 from '../assets/images/couple/7.jpg';
+import img8 from '../assets/images/couple/8.jpg';
+import img9 from '../assets/images/couple/9.jpg';
+import img10 from '../assets/images/couple/10.jpg';
+import img11 from '../assets/images/couple/11.jpg';
+import img12 from '../assets/images/couple/12.jpg';
+import img13 from '../assets/images/couple/13.jpg';
+import img14 from '../assets/images/couple/14.jpg';
+import img15 from '../assets/images/couple/15.jpg';
+import img16 from '../assets/images/couple/16.jpg';
+import img17 from '../assets/images/couple/17.jpg';
+import img18 from '../assets/images/couple/18.jpg';
+
 import haldiImg from '../assets/images/events/haldi.png';
 import mehandiImg from '../assets/images/events/mehandi.png';
 import receptionImg from '../assets/images/events/reception.png';
@@ -281,6 +294,18 @@ const config = {
     { src: img4, type: 'image' },
     { src: img5, type: 'image' },
     { src: img6, type: 'image' },
+    { src: img7, type: 'image' },
+    { src: img8, type: 'image' },
+    { src: img9, type: 'image' },
+    { src: img10, type: 'image' },
+    { src: img11, type: 'image' },
+    { src: img12, type: 'image' },
+    { src: img13, type: 'image' },
+    { src: img14, type: 'image' },
+    { src: img15, type: 'image' },
+    { src: img16, type: 'image' },
+    { src: img17, type: 'image' },
+    //{ src: img18, type: 'image' },
     // { src: '/videos/highlight.mp4', type: 'video', poster: '/images/gallery-1.jpg' },
   ],
 
