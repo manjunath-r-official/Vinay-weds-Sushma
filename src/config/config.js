@@ -52,7 +52,7 @@ const config = {
     siteTitle: 'Sushma & Vinay — Wedding Invitation',
     description: 'Join Sushma & Vinay as they begin their forever. December 2026, New Delhi.',
     url: 'https://sushmavinay.wedding',
-    ogImage: '/og-cover.jpg',
+    ogImage: '/cover.jpg',
   },
 
   // ------------------------------------------------------------- COUPLE
@@ -123,7 +123,7 @@ const config = {
       overlay: 'rgba(10,3,5,0.15)', // background overlay opacity
     },
     items: [
-      // { source: 'contacts.groomPhone', label: 'Call Vinay', icon: 'phone' },
+      { source: 'contacts.groomPhone', label: 'Call Vinay', icon: 'phone' },
       // { source: 'contacts.bridePhone', label: 'Call Sushma', icon: 'phone' },
       { source: 'contacts.parentsPhone', label: 'Contact us', icon: 'phone' },
       { source: 'contacts.whatsapp', label: 'WhatsApp', icon: 'whatsapp' },
