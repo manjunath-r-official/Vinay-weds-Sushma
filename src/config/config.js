@@ -25,6 +25,8 @@ import img15 from '../assets/images/couple/15.jpg';
 import img16 from '../assets/images/couple/16.jpg';
 import img17 from '../assets/images/couple/17.jpg';
 import img18 from '../assets/images/couple/18.jpg';
+import groomPic from '../assets/images/couple/groom.jpg';
+import bridePic from '../assets/images/couple/bride.jpg';
 
 import haldiImg from '../assets/images/events/haldi.png';
 import mehandiImg from '../assets/images/events/mehandi.png';
@@ -58,7 +60,7 @@ const config = {
     name: 'Sushma',
     fullName: 'Sushma.L.P',
     parents: 'Sri B.A. Prakash & Smt. Late Latha',
-    photo: img3,
+    photo: bridePic,
     story:
       '',
   },
@@ -66,7 +68,7 @@ const config = {
     name: 'Vinay',
     fullName: 'Vinay.R',
     parents: 'Late Sri Rudra Aradhya & Smt. Manjula',
-    photo: img2,
+    photo: groomPic,
     story:
       '',
   },
