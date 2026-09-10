@@ -231,7 +231,7 @@ export default function Gallery() {
             }}
           >
             <button
-              className="absolute top-6 right-6 z-210 p-2 rounded-full bg-[rgba(10,3,5,0.8)] text-ivory text-3xl"
+              className="absolute top-6 right-6 z-210 p-2 rounded-full bg-[rgba(10,3,5,0.2)] text-ivory text-3xl"
               aria-label="Close fullscreen"
               onClick={(e) => { e.stopPropagation(); closeFullscreen(); }}
             >
@@ -239,7 +239,7 @@ export default function Gallery() {
             </button>
             
             <button
-              className="absolute left-6 z-210 p-4 rounded-full bg-[rgba(10,3,5,0.8)] text-ivory text-4xl"
+              className="absolute left-6 z-210 p-4 rounded-full bg-[rgba(10,3,5,0.2)] text-ivory text-4xl"
               aria-label="Previous"
               onClick={(e) => { e.stopPropagation(); prevFullscreen(); }}
             >
@@ -247,7 +247,7 @@ export default function Gallery() {
             </button>
             
             <button
-              className="absolute right-6 z-210 p-4 rounded-full bg-[rgba(10,3,5,0.8)] text-ivory text-4xl"
+              className="absolute right-6 z-210 p-4 rounded-full bg-[rgba(10,3,5,0.2)] text-ivory text-4xl"
               aria-label="Next"
               onClick={(e) => { e.stopPropagation(); nextFullscreen(); }}
             >
