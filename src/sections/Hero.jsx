@@ -59,7 +59,7 @@ export default function Hero() {
         .hero-intro {
           margin-bottom: 1.3rem;
           font-size: clamp(15px, 1.8vw, 16px);
-          color: ${config.theme.colors.maroon};
+          color: ${config.theme.colors.ivory};
           text-transform: none;
           opacity: 0.92;
           max-width: 56ch;
@@ -72,7 +72,7 @@ export default function Hero() {
 
         .hero-title {
           font-family: 'Great Vibes', ${config.theme.fonts.cinzel}, ${config.theme.fonts.display}, cursive;
-          color: ${config.theme.colors.maroonDeep};
+          color: ${config.theme.colors.ivory};
           font-size: clamp(40px, 12vw, 96px);
           line-height: 0.9;
           text-align: center;
