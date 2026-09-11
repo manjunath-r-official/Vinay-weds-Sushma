@@ -28,7 +28,7 @@ export default function Hero() {
           align-items: flex-start;
           justify-content: center;
           padding-top: 15vh; /* place title ~20% from top */
-          background-image: url('${heroSmall}');
+          background-image: url('${coupleImg}');
           background-size: cover;
           background-position: center center;
           background-repeat: no-repeat;
