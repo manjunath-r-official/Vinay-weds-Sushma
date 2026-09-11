@@ -1,6 +1,7 @@
 import config from '../config/config.js';
 import heroSmall from '../assets/images/hero_small.png';
 import heroBig from '../assets/images/hero_big.png';
+import coupleImg from '../assets/images/couple/coupleForheroSection.png';
 
 export default function Hero() {
   const groom = config.groom?.name || 'Groom';

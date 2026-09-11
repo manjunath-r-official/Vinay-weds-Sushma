@@ -103,7 +103,7 @@ const config = {
 
   // ---------------------------------------------------------- CONTACTS
   contacts: {
-    groomPhone: '+917483147151',
+    groomPhone: '+91',
     bridePhone: '+917483147151',
     parentsPhone: '+917483147151',
     whatsapp: '917483147151',
