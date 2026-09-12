@@ -27,7 +27,7 @@ export default function Hero() {
           display: flex;
           align-items: flex-start;
           justify-content: center;
-          padding-top: 15vh; /* place title ~20% from top */
+          padding-top: 12vh; /* place title ~20% from top */
           background-image: url('${coupleImg}');
           background-size: cover;
           background-position: center center;
@@ -53,13 +53,13 @@ export default function Hero() {
         }
 
         @media (max-width: 640px) {
-          .hero-overlay { width: 80%; margin-bottom: 2rem; }
+          .hero-overlay { width: 65%; margin-bottom: 2rem; }
         }
 
         .hero-intro {
           margin-bottom: 1.3rem;
           font-size: clamp(15px, 1.8vw, 16px);
-          color: ${config.theme.colors.ivory};
+          color: ${config.theme.colors.brown};
           text-transform: none;
           opacity: 0.92;
           max-width: 56ch;
@@ -72,7 +72,7 @@ export default function Hero() {
 
         .hero-title {
           font-family: 'Great Vibes', ${config.theme.fonts.cinzel}, ${config.theme.fonts.display}, cursive;
-          color: ${config.theme.colors.ivory};
+          color: ${config.theme.colors.brown};
           font-size: clamp(40px, 12vw, 96px);
           line-height: 0.9;
           text-align: center;

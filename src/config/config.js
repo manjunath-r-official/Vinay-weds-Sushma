@@ -165,7 +165,8 @@ const config = {
   // ----------------------------------------------------------- THEME
   theme: {
     colors: {
-      maroon: '#3B0D14',
+      maroon: '#3b0d14',
+      brown: '#681723',
       maroonDeep: '#26080D',
       gold: '#C9A24B',
       goldBright: '#E8C874',
