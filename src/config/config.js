@@ -25,21 +25,23 @@ import img15 from '../assets/images/couple/15.jpg';
 import img16 from '../assets/images/couple/16.jpg';
 import img17 from '../assets/images/couple/17.jpg';
 import img18 from '../assets/images/couple/18.jpg';
-import groomPic from '../assets/images/couple/groom.jpg';
-import bridePic from '../assets/images/couple/bride.jpg';
+//import bridePic from '../assets/images/couple/bride.jpg';
+//import groomPic from '../assets/images/couple/groom.jpg';
+import groomPic from '../assets/images/couple/groom.png';
+import bridePic from '../assets/images/couple/bride.png';
 
 import haldiImg from '../assets/images/events/haldi.png';
 import mehandiImg from '../assets/images/events/mehandi.png';
 import receptionImg from '../assets/images/events/reception.png';
 import weddingImg from '../assets/images/events/wedding.png';
-import sapt1 from '../assets/images/saptapadi/1.png';
-import sapt2 from '../assets/images/saptapadi/2.png';
-import sapt3 from '../assets/images/saptapadi/3.png';
-import sapt4 from '../assets/images/saptapadi/4.png';
-import sapt5 from '../assets/images/saptapadi/5.png';
-import sapt6 from '../assets/images/saptapadi/6.png';
-import sapt7 from '../assets/images/saptapadi/7.png';
-import peacockPlaceholder from '../assets/images/peacock-placeholder.svg';
+// import sapt1 from '../assets/images/saptapadi/1.png';
+// import sapt2 from '../assets/images/saptapadi/2.png';
+// import sapt3 from '../assets/images/saptapadi/3.png';
+// import sapt4 from '../assets/images/saptapadi/4.png';
+// import sapt5 from '../assets/images/saptapadi/5.png';
+// import sapt6 from '../assets/images/saptapadi/6.png';
+// import sapt7 from '../assets/images/saptapadi/7.png';
+//import peacockPlaceholder from '../assets/images/peacock-placeholder.svg';
 // Background music (replace with your file in src/assets/audio/)
 import bgm from '../assets/audio/bgm.mp3';
 import coupleBg from '../assets/images/props/bg2.png';
@@ -315,57 +317,57 @@ const config = {
   // ------------------------------------------------------- SAPTAPADI IMAGES
   // Configure step images here. Each step can define `image` (thumbnail)
   // and `modalImage` (larger backdrop shown in the modal).
-  saptapadi: [
-    {
-      number: '01',
-      title: 'Pratham Padi',
-      meaning: 'We walk together with faith, trust, and a shared purpose.',
-      image: sapt1,
-      modalImage: sapt1,
-    },
-    {
-      number: '02',
-      title: 'Dvitiiya Padi',
-      meaning: 'We nurture strength, harmony, and a life of togetherness.',
-      image: sapt2,
-      modalImage: sapt2,
-    },
-    {
-      number: '03',
-      title: 'Tritiya Padi',
-      meaning: 'We honour prosperity, wisdom, and the blessings of family.',
-      image: sapt3,
-      modalImage: sapt3,
-    },
-    {
-      number: '04',
-      title: 'Chaturthi Padi',
-      meaning: 'We grow in love, comfort, and mutual respect every day.',
-      image: sapt4,
-      modalImage: sapt4,
-    },
-    {
-      number: '05',
-      title: 'Panchami Padi',
-      meaning: 'We cherish courage, compassion, and a life rooted in grace.',
-      image: sapt5,
-      modalImage: sapt5,
-    },
-    {
-      number: '06',
-      title: 'Shashthi Padi',
-      meaning: 'We walk in devotion, loyalty, and the light of union.',
-      image: sapt6,
-      modalImage: sapt6,
-    },
-    {
-      number: '07',
-      title: 'Saptami Padi',
-      meaning: 'We vow to remain one in joy, sorrow, and forever.',
-      image: sapt7,
-      modalImage: sapt7,
-    },
-  ],
+  // saptapadi: [
+  //   {
+  //     number: '01',
+  //     title: 'Pratham Padi',
+  //     meaning: 'We walk together with faith, trust, and a shared purpose.',
+  //     image: sapt1,
+  //     modalImage: sapt1,
+  //   },
+  //   {
+  //     number: '02',
+  //     title: 'Dvitiiya Padi',
+  //     meaning: 'We nurture strength, harmony, and a life of togetherness.',
+  //     image: sapt2,
+  //     modalImage: sapt2,
+  //   },
+  //   {
+  //     number: '03',
+  //     title: 'Tritiya Padi',
+  //     meaning: 'We honour prosperity, wisdom, and the blessings of family.',
+  //     image: sapt3,
+  //     modalImage: sapt3,
+  //   },
+  //   {
+  //     number: '04',
+  //     title: 'Chaturthi Padi',
+  //     meaning: 'We grow in love, comfort, and mutual respect every day.',
+  //     image: sapt4,
+  //     modalImage: sapt4,
+  //   },
+  //   {
+  //     number: '05',
+  //     title: 'Panchami Padi',
+  //     meaning: 'We cherish courage, compassion, and a life rooted in grace.',
+  //     image: sapt5,
+  //     modalImage: sapt5,
+  //   },
+  //   {
+  //     number: '06',
+  //     title: 'Shashthi Padi',
+  //     meaning: 'We walk in devotion, loyalty, and the light of union.',
+  //     image: sapt6,
+  //     modalImage: sapt6,
+  //   },
+  //   {
+  //     number: '07',
+  //     title: 'Saptami Padi',
+  //     meaning: 'We vow to remain one in joy, sorrow, and forever.',
+  //     image: sapt7,
+  //     modalImage: sapt7,
+  //   },
+  // ],
 
   // ------------------------------------------------------------ FAMILY
   family: [
@@ -436,7 +438,7 @@ const config = {
   // whenever you have one ready — until then a placeholder is used.
   navigation: {
     style: 'feather-drawer', // 'feather-drawer' | 'bar' (classic always-visible bar)
-    peacockIcon: peacockPlaceholder,
+    //peacockIcon: peacockPlaceholder,
     // Enable or disable the floating navigation (feather trigger + drawer)
     floatingEnabled: false,
   },
