@@ -103,8 +103,8 @@ const config = {
 
   // ---------------------------------------------------------- CONTACTS
   contacts: {
-    groomPhone: '+91',
-    bridePhone: '+917483147151',
+    //groomPhone: '+91',
+    //bridePhone: '+917483147151',
     parentsPhone: '+917483147151',
     whatsapp: '917483147151',
     //email: 'hello@sushmavinay.wedding',
@@ -123,7 +123,7 @@ const config = {
       overlay: 'rgba(10,3,5,0.15)', // background overlay opacity
     },
     items: [
-      { source: 'contacts.groomPhone', label: 'Call Vinay', icon: 'phone' },
+      //{ source: 'contacts.groomPhone', label: 'Call Vinay', icon: 'phone' },
       // { source: 'contacts.bridePhone', label: 'Call Sushma', icon: 'phone' },
       { source: 'contacts.parentsPhone', label: 'Contact us', icon: 'phone' },
       { source: 'contacts.whatsapp', label: 'WhatsApp', icon: 'whatsapp' },
@@ -208,9 +208,9 @@ const config = {
     {
       name: 'Haldi',
       icon: '🌼',
-      date: 'Sept 20, 2026',
-      time: '10:00 PM',
-      venue: 'Prakruthi vilasa, Bangalore',
+      date: 'Sept 18, 2026',
+      time: '10:00 AM',
+      venue: 'Aradhya Nilaya, Bangalore',
       // dressCode: 'Yellow Attire',
       description: 'A joyful morning of turmeric, laughter, and blessings from both families.',
       backgroundImage: haldiImg, // optional per-card override
@@ -219,7 +219,7 @@ const config = {
       name: 'Mehendi',
       icon: '🌿',
       date: 'Sept 18, 2026',
-      time: '10:00 AM',
+      time: '05:00 PM',
       venue: 'Aradhya Nilaya, Bangalore',
       // dressCode: 'Green & Gold',
       description: 'Intricate henna, live dhol, and an evening of stories and sweets.',
