@@ -154,7 +154,7 @@ export default function ScratchSurprise({ onCelebrate }) {
       <Reveal className="text-center">
         <span className="inline-block tracking-[0.28em] uppercase text-xs text-gold-bright mb-3">Shhh...</span>
         <h2 className="font-display font-medium text-ivory" style={{ fontSize: 'clamp(34px,6vw,58px)' }}>Save The Date</h2>
-        <p className="text-rose italic max-w-md mx-auto mt-2 mb-12">Scratch the card below to reveal the big day.</p>
+        {/* <p className="text-rose italic max-w-md mx-auto mt-2 mb-12">Scratch the card below to reveal the big day.</p> */}
       </Reveal>
 
       <Reveal variant="scale">
@@ -173,8 +173,9 @@ export default function ScratchSurprise({ onCelebrate }) {
         >
           <div className="px-6 py-8 text-center min-h-[220px] flex flex-col items-center justify-center" style={{ background: 'transparent' }}>
             <span className="text-2xl mb-2" style={{ color: config.theme.colors.maroonDeep }}>💍</span>
-            <h4 className="font-display text-2xl mb-1 leading-snug" style={{ color: config.theme.colors.maroonDeep }}>{dateStr}</h4>
-            <p className="text-[13px]" style={{ color: config.theme.colors.maroon }}>{config.scratchSurprise.subtitle}</p>
+            {/* <h4 className="font-display text-2xl mb-1 leading-snug" style={{ color: config.theme.colors.maroonDeep }}>{dateStr}</h4> */}
+            <h4 className="font-display text-2xl mb-1 leading-snug" style={{ color: config.theme.colors.maroonDeep }}>20th, 21st September, 2026</h4>
+            <p className="text-[13px] mx-6" style={{ color: config.theme.colors.maroon }}>{config.scratchSurprise.subtitle}</p>
           </div>
           {!revealed && (
             <canvas

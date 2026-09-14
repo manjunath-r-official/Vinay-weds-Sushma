@@ -384,7 +384,7 @@ const config = {
   // duplicate the date here. `subtitle` is the line shown under the date
   // once revealed; customize freely.
   scratchSurprise: {
-    subtitle: "Mark your calendar - we can't wait to celebrate with you.",
+    subtitle: "Join us as we begin our forever, surrounded by the ones we love.",
     // Optional background image for the scratch card area. Point at a
     // file inside `src/assets/images/`, e.g. '/src/assets/images/props/scratch-bg.png'
     // Leave empty string to use the default solid color background.
