@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import config from '../config/config.js';
 import ganeshaImage from '../assets/images/lordganesha.png';
-import thoranaImage from '../assets/images/GIF/thorana.gif';
+//import thoranaImage from '../assets/images/GIF/thorana.gif';
 
 const MARIGOLD_COLORS = ['#f8d266', '#f4a261', '#f9b233', '#e76f51', '#f1c40f'];
 
@@ -71,9 +71,27 @@ export default function WelcomeSequence({ visible, onEnter }) {
     <div
       className="fixed inset-0 z-[90] flex w-full max-w-full flex-col items-center justify-center overflow-hidden text-center"
       style={{
-        background: 'radial-gradient(ellipse at center, #2a0a10, #170509)',
+        backgroundColor: config.welcome?.backgroundColor || '#170509',
       }}
     >
+      <div
+        className="pointer-events-none absolute inset-0 bg-center bg-cover bg-no-repeat"
+        aria-hidden="true"
+        style={{
+          backgroundImage: config.welcome?.backgroundImage
+            ? `url(${config.welcome.backgroundImage})`
+            : undefined,
+          opacity: config.welcome?.backgroundImageOpacity ?? 1,
+        }}
+      />
+      <div
+        className="pointer-events-none absolute inset-0"
+        aria-hidden="true"
+        style={{
+          background: config.welcome?.backgroundGradient || config.welcome?.backgroundColor || '#170509',
+          opacity: config.welcome?.backgroundGradientOpacity ?? 1,
+        }}
+      />
       <style>{`
         @keyframes welcomeFloat {
           0% {
@@ -107,12 +125,12 @@ export default function WelcomeSequence({ visible, onEnter }) {
 
       <div ref={petalsRef} className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true" />
 
-      <img
+      {/* <img
         src={thoranaImage}
         alt="Decorative wedding torana"
         className="pointer-events-none absolute inset-x-0 top-0 w-full max-w-[1200px] object-contain opacity-80"
         style={{ filter: 'drop-shadow(0 0 24px rgba(201,162,75,0.12))' }}
-      />
+      /> */}
 
       <div className="relative z-10 mb-5 max-w-[min(84vw,420px)]">
         <img

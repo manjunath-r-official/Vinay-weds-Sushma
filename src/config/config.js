@@ -45,6 +45,7 @@ import weddingImg from '../assets/images/events/wedding.png';
 // Background music (replace with your file in src/assets/audio/)
 import bgm from '../assets/audio/bgm.mp3';
 import coupleBg from '../assets/images/props/bg2.png';
+import welcomeBg from '../assets/images/props/welcomebg.png';
 import godImg from '../assets/images/props/god.png';
 import scratchBg from '../assets/images/props/scratchbg.png';
 
@@ -83,6 +84,11 @@ const config = {
 
   welcome: {
     flowerEmojis: ['🌼', '🌸'],
+    backgroundImage: welcomeBg,
+    backgroundColor: '#170509',
+    backgroundGradient: 'linear-gradient(rgba(23, 5, 9, 0), rgba(23, 5, 9, 0.72))',
+    backgroundImageOpacity: 1,
+    backgroundGradientOpacity: 1,
   },
 
   // ------------------------------------------------------------- DATES
